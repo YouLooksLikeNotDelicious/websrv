@@ -1,0 +1,112 @@
+<extend name="Shared:layout" />
+<block name="title">Sing in</block>
+
+<block name="head">
+  <link rel="stylesheet" href="__CSS__/Account/form.css" />
+</block>
+
+<block name="body">
+  <include file="Shared:navigation" title="Sign in" />
+
+  <div class="main">
+    <form action="__APP__/Account/login?from=b" method="GET">
+      <fieldset>
+        <div class="control input-control clearfix">
+          <i class="icon icon-B1PhoneNumber"></i>
+          <div class="input-wrapper">
+            <input type="text" class="phone-num" name="userName" id="PhoneNum"
+              placeholder="Phone Number">
+          </div>
+        </div>
+        <div class="control input-control clearfix">
+          <i class="icon icon-B1-Jpassword"></i>
+          <div class="input-wrapper">
+            <input type="password" class="pwd" name="pwd" id="Password"
+              placeholder="Password">
+          </div>
+        </div>
+      </fieldset>
+      <div class="control mt-40">
+        <div class="button-wrapper">
+          <button type="button" onclick="submitForm(arguments[0], this);" id="submitBt"
+            data-submit-text="Sign in..." class="btn btn-primary form-btn">
+            Confirm
+          </button>
+        </div>
+      </div>
+      <div class="control mt-10">
+        <div class="button-wrapper">
+          <a href="javascript:locate('__APP__/Account/registerPage')" class="btn btn-success form-btn">Sign up</a>
+        </div>
+      </div>
+      <div class="control mt-30">
+        <div class="button-wrapper other-control">
+          <label class="remember-chk">
+            <input type="checkbox" name="remember" value="true" />
+            <span>Remember me</span>
+          </label>
+          <a href="javascript:locate('__APP__/Account/forgetFirst')" class="forget-pwd pull-right">
+            Forget the password?
+          </a>
+        </div>
+      </div>
+    </form>
+
+  </div>
+</block>
+
+<block name="script">
+  <script>
+    var submitForm = function (e, btn) {
+      var formInfo = getForm(),
+        values = getFields(),
+        validateMsg = validateForm(values),
+        $btn = $(btn);
+      if (!validateMsg) {
+        $btn.button('submit');
+        $.ajax({
+          url: formInfo.url,
+          method: formInfo.method,
+          data: serializeKeyVals(values),
+          success: function (data) {
+            if (data.status == 1000) {
+              if (location.search.indexOf('from=') != -1) {
+                location.search.substr(1).split('&').forEach(function (s) {
+                  var temp = s.split('=');
+                  if (temp[0] == 'from') {
+                    var from = decodeURIComponent(temp[1]);
+                    locate(from, false);
+                  }
+                });
+              } else {
+                locate(ROOT + '/Main/index', false);
+              }
+            } else {
+              alert(data.msg || data.errMsg  || 'Sign in failed, please retry');
+            }
+          },
+          error: function (txtStatus, msg, xhr) {
+              alert('Failed: ' + txtStatus + ', please retry');
+          },
+          complete: function (){
+            $btn.button('reset');
+          }
+        });
+      } else {
+        alert(validateMsg);
+      }
+    };
+
+    var validateForm = function (vals) {
+      var result = [];
+      if (!$.trim(vals['userName'])) {
+        result.push('Phone number can not be empty');
+      }
+      if (!$.trim(vals['pwd'])) {
+        result.push('Password can not be empty');
+      }
+      return result.join(String.fromCharCode(92) + 'n');
+    };
+  </script>
+</block>
+

@@ -1,0 +1,90 @@
+<extend name="Shared:layout" />
+<block name="title">Recharge</block>
+
+<block name="head">
+  <link rel="stylesheet" href="__CSS__/Account/form.css" />
+</block>
+
+<block name="body">
+  <include file="Shared:navigation" title="Recharge" />
+
+  <div class="main">
+    <form action="__APP__/Account/recharge?from=b" method="GET" autocomplete="off">
+      <fieldset>
+        <div class="control input-control clearfix">
+          <i class="icon icon-J-card"></i>
+          <div class="input-wrapper">
+            <input type="text" class="phone-num" name="cardId" id="cardId"
+              placeholder="Card number" />
+          </div>
+        </div>
+        <div class="control input-control clearfix">
+          <i class="icon icon-B1-Jpassword"></i>
+          <div class="input-wrapper">
+            <input type="password" class="pwd" name="cardPwd" id="cardPwd"
+              placeholder="Card password" autocomplete="off" />
+          </div>
+        </div>
+      </fieldset>
+      <div class="control mt-40">
+        <div class="button-wrapper">
+          <button type="button" id="confirmBtn" onclick="submitForm(arguments[0], this);"
+            class="btn btn-success form-btn" data-loading-text="Waiting...">
+            Confirm
+          </button>
+        </div>
+      </div>
+    </form>
+
+  </div>
+</block>
+
+<block name="script">
+  <script>
+    var submitForm = function (e, btn) {
+      e = e || window.event;
+
+      var formInfo = getForm(),
+        values = getFields(),
+        validateMsg = validateForm(values),
+        $btn = $(btn);
+      if (!validateMsg) {
+        $btn.button('submit');
+        $.ajax({
+          url: formInfo.url,
+          method: formInfo.method,
+          data: serializeKeyVals(values),
+          success: function (data) {
+            if (data.status == 1000) {
+              alert('Recharge success!');
+              historyBack();
+            } else {
+              alert(data.msg || data.errMsg  || 'Recharge failed, please retry');
+            }
+          },
+          error: function (txtStatus, msg, xhr) {
+              alert('Failed: ' + txtStatus + ', please retry');
+          },
+          complete: function (){
+            $btn.button('reset');
+          }
+        });
+      } else {
+        alert(validateMsg);
+      }
+    };
+
+    var validateForm = function (vals) {
+      var result = [];
+      if (!$.trim(vals['cardId'])) {
+        result.push('Please input the card number');
+      }
+      if (!$.trim(vals['cardPwd'])) {
+        result.push('Please input the card password');
+      }
+
+      return result.join(String.fromCharCode(92) + 'n');
+    };
+  </script>
+</block>
+

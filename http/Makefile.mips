@@ -1,0 +1,34 @@
+controllers = controller/base.o controller/account.o controller/SiteLanguage.o 
+libs = libs/web.o libs/session.o libs/mimetype.o libs/daemon.o libs/unix_socket.o libs/unix_socket_buffer.o libs/arp.o libs/data_collect.o libs/cmdopt.o libs/log.o libs/logger.o libs/json_result.o
+
+business_dir = controller/Business
+business =  $(business_dir)/Request.o $(business_dir)/AccountBusiness.o $(business_dir)/SessionBusiness.o  $(business_dir)/SessionInfo.o
+
+objects = server.o $(controllers) $(libs) $(business)
+
+debug: 
+	make -C tpl
+	make -C controller/Business
+	make -f Makefile.mips server_debug
+
+server_debug: $(objects)
+	$(CXX) $^ $(LDFLAGS) -o $@
+
+server: $(objects)
+	$(CXX) $^ $(LDFLAGS) -o $@
+	
+server.o: site.config
+libs/web.o: libs/web.cpp $(shell ls libs/web.partial*)
+$(controllers) $(libs) server.o: libs/logger.hpp
+
+controller/SiteLanguage.o: controller/SiteLanguage.cpp
+
+controller/base.o: controller/SiteLanguage.hpp
+
+clean:
+	-@rm -fr server_debug server *.o controller/*.o libs/*.o tpl/*/*.hpp
+	make -C tpl clean
+	make -C controller/content clean
+	make -C controller/Business clean
+
+

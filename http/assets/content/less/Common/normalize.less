@@ -1,0 +1,32 @@
+@import 'variables.less';
+@import 'variables-custom.less';
+@import 'mixins.less';
+
+*{
+    padding: 0;
+    margin: 0;
+    .box-sizing(border-box);
+}
+*:before, *:after {
+    .box-sizing(border-box);
+}
+html{
+    width: 100%;
+    font-size: 20px;
+    -webkit-text-size-adjust: none;
+}
+body{
+    margin: 0 auto;
+    font-family: 'Microsoft Yahei', '黑体', 'Ubuntu';
+    background-color: @bg-color;
+    font-size: @font-size-normal;
+}
+p {
+    color: @text-color;
+    font-size: @font-size-normal;
+    line-height: 1.4;
+}
+a {
+    text-decoration: none;
+    color: @text-color;
+}

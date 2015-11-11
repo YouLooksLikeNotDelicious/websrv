@@ -1,0 +1,68 @@
+@import 'variables.less';
+@import 'variables-custom.less';
+@import 'mixins.less';
+
+// topbar 
+.cy-topbar {
+    .clearfix();
+    position: relative;
+
+    display: block;
+    width: 100%;
+    height: @topbar-height;
+    padding: @topbar-vertical-padding @topbar-left-padding;
+
+    border-bottom: 1px solid @border-color;
+    background-color: @bg-color;
+    .logo {
+        position: relative;
+        z-index: 1; // 防止被title覆盖而无法点击
+        float: left;
+        display: table;
+        height: 100%;
+        .logo-inner {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+            padding: 0 0.6rem;
+            .icon {
+                display: block;
+            }
+        }
+    }
+    .actions {
+        position: relative;
+        z-index: 1; // 防止被title覆盖而无法点击
+        
+        float: right;
+        display: table;
+        height: 100%;
+        .action-btn {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+            padding: 0 0.3rem;
+            .icon {
+                display: block;
+            }
+        }
+    }
+    .title {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        padding-left: 4rem;
+        padding-right: 4rem;
+        .ellipsis();
+        height: 100%;
+        width: 100%;
+
+        text-align: center;
+        color: @title-color;
+        font-size: @font-size-larger;
+        line-height: @topbar-height;
+    }
+}

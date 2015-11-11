@@ -1,0 +1,46 @@
+.btn {
+  border: none;
+  border-radius: @borderRadius;
+  padding: 7px 4px;
+  width: 73px;
+  text-align: center;
+  color: white;
+  font-size: @smallFontSize;
+  line-height: 1;
+  height: 30px;
+  display: inline-block;
+  text-decoration: none;
+  .oneline();
+  &:disabled {
+    background-color: @btnDisabledColor;
+    color: @commentColor;
+    text-shadow: 1px 1px 1px white;
+  }
+}
+
+.btn-success {
+  background: @btnSuccessColor;
+}
+.btn-primary {
+  background: @mainColor;
+}
+.btn-danger {
+  background: #ed5565;
+}
+
+.button-wrapper {
+  padding: 0 30px;
+  height: 35px;
+}
+.form-btn {
+  width: 100%;
+  height: 100%;
+  padding: 10px 0;
+
+  font-size: @baseFontSize;
+  text-align: center;
+
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}

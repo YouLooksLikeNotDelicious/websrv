@@ -1,0 +1,78 @@
+.content-list {
+    li {
+        width: 100%;
+        padding: 13px 10px 10px 10px;
+        margin-top: 4px;
+        float: left;
+
+        background-color: white;
+
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+}
+.picture {
+    display: block;
+}
+.picture-cover {
+    position: relative;
+    height: 180px;
+    background-size: cover;
+    background-position: center center;
+
+    &:before, &:after {
+        content: ' ';
+        position: absolute;
+        left: 3px;
+        right: 3px;
+        top: -2px;
+        border-bottom: 1px solid @borderColor;
+    }
+    &:after {
+        left: 5px;
+        right: 5px;
+        top: -4px;
+    }
+}
+.picture-info {
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    width: 200px;
+    padding: 5px 10px;
+    line-height: 1.2em;
+    background-color: rgba(0,0,0,.5);
+}
+.picture-title {
+    .oneline();
+    font-weight: bold;
+    color: rgba(255,255,255,.9);
+}
+.picture-desc {
+    font-size: @smallFontSize;
+    color: rgba(255,255,255,.9);
+}
+
+.picture-bottom {
+    padding-top: 10px;
+    .btn.buy {
+        .is-ios & {
+            visibility: hidden;
+        }
+    }
+}
+.picture-size {
+    float: left;
+    position: relative;
+    top: 4px;
+    color: @commentColor;
+}
+.download-duration {
+    position: relative;
+    top: 9px;
+    color: @linkColor2;
+    margin-left: 5px;
+    font-style: italic;
+    font-size: @smallFontSize;
+}

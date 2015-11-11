@@ -1,0 +1,42 @@
+@iconUrl: '../../img/icons.png';
+
+.icon {
+    display: inline-block;
+    margin-bottom: -1px;
+    background-repeat: no-repeat;
+    background-image: url(@iconUrl);
+}
+.icon-B1-Jpassword{ background-position: 0 0; width: 20px; height: 20px; }
+.icon-B1PhoneNumber{ background-position: 0 -30px; width: 20px; height: 20px; }
+.icon-B2-2dropdown{ background-position: 0 -60px; width: 8px; height: 12px; }
+.icon-B2-2answer{ background-position: 0 -82px; width: 20px; height: 20px; }
+.icon-B2-2qusetion{ background-position: 0 -112px; width: 20px; height: 20px; }
+.icon-B2-3passwordreset{ background-position: 0 -142px; width: 20px; height: 20px; }
+.icon-Button-download{ background-position: 0 -172px; width: 15px; height: 11px; }
+.icon-Button-money{ background-position: 0 -193px; width: 14px; height: 14px; }
+.icon-I-App{ background-position: 0 -217px; width: 30px; height: 30px; }
+.icon-I-Music{ background-position: 0 -257px; width: 30px; height: 30px; }
+.icon-I-Video{ background-position: 0 -297px; width: 30px; height: 30px; }
+.icon-I-Wallpaper{ background-position: 0 -337px; width: 30px; height: 30px; }
+.icon-I-game{ background-position: 0 -377px; width: 30px; height: 30px; }
+.icon-I-money-orange{ background-position: 0 -417px; width: 14px; height: 14px; }
+.icon-J-card{ background-position: 0 -441px; width: 20px; height: 20px; }
+.icon-earphone{ background-position: 0 -471px; width: 45px; height: 45px; }
+.icon-earphone_small{ background-position: 0 -526px; width: 30px; height: 30px; }
+.icon-nextpage-disabled{ background-position: 0 -566px; width: 16px; height: 12px; }
+.icon-nextpage{ background-position: 0 -588px; width: 16px; height: 12px; }
+.icon-play-small{ background-position: 0 -610px; width: 30px; height: 30px; }
+.icon-play{ background-position: 0 -650px; width: 45px; height: 45px; }
+.icon-previouspage-disabled{ background-position: 0 -705px; width: 16px; height: 12px; }
+.icon-previouspage{ background-position: 0 -727px; width: 16px; height: 12px; }
+.icon-searchBar-cancel{ background-position: 0 -749px; width: 13px; height: 13px; }
+.icon-search-Bar-Search2{ background-position: 0 -772px; width: 24px; height: 25px; }
+.icon-search-Bar-back{ background-position: 0 -807px; width: 16px; height: 24px; }
+
+@media (-webkit-min-device-pixel-ratio: 1.5) {
+    .icon {
+        background-size: image-size(@iconUrl);
+        @highResIconUrl: height-resolute-url(@iconUrl);
+        background-image: url(@highResIconUrl);
+    }
+}

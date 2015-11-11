@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>设备报备</title>
+  <style>
+    body {
+      background:#3498DB;
+      margin:0px;
+      font-family: helvetica, arial;
+    }
+    h1, h2, h3, h4, h5, h6, a {
+      margin:0;
+      padding:0;
+    }
+    .login {
+      margin:0 auto;
+      max-width:500px;
+    }
+    .login-header {
+      color:#fff;
+      text-align:center;
+      font-size:3em;
+    }
+    form h3 {
+      text-align:left;
+      color:#666;
+      font-variant: small-caps ;
+    }
+    form {
+      padding:15px 40px;
+      margin:50px auto;
+      text-align:center;
+      border-radius: 5px;
+      background: white;
+    }
+    input[type="text"],
+    select {
+      width:400px;
+      height:30px;
+      margin:10px 0;
+      border-radius:5px;
+      border:2px solid #ECF0F1;
+      padding-left:10px;
+      color: #666;
+    }
+    input[type="submit"] {
+      height:30px;
+      width:100px;
+      margin-bottom: 10px;
+      border:1px solid #3498DB;
+      border-radius:20px;
+      text-transform:uppercase;
+      cursor:pointer;
+      background: #3498DB;
+      color: white;
+    }
+    .error {
+      text-align: left;
+      padding-bottom: 10px;
+      color: #FF4136;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+    <div class="login">
+      <div class="login-header">
+        <h1>Report</h1>
+      </div>
+      <form onsubmit="return submitForm(this);" action="__APP__/Wifi/confirm">
+        <div>
+          <h3>wifi station</h3>
+          <div style="width: 100%;text-align: left;">
+            <select id="country" placeholder="country"
+              data-cascade="province" onchange="onCountryChange(this);">
+              <option value="-1">please select country</option>
+              <foreach name="countries" item="country">
+                <option value="{$country.id}">{$country.name}</option>
+              </foreach>
+            </select>
+            <select id="province" placeholder="province"
+              data-cascade="city" data-parent="country" onchange="onProvinceChange(this);">
+            </select>
+            <select id="city" placeholder="city"
+              data-cascade="wifi" data-parent="province" onchange="onCityChange(this);">
+            </select>
+            <select name="wifiId" id="wifi" placeholder="wifi"
+              data-parent="city">
+            </select>
+          </div>
+        </div>
+        <div>
+          <h3>staff</h3>
+          <input type="text" disabled value="{$userName}">
+        </div>
+        <div>
+          <input type="submit" value="Commit" class="login-button">
+        </div>
+      </form>
+    </div>
+    <script src="__SCRIPT__/common/common.js"></script>
+    <script>
+      function submitForm(form) {
+        var wifiId = document.getElementById('wifi').value;
+        if (!wifiId || wifiId == '-1') {
+          alert('请选择站点');
+          return false;
+        }
+      }
+
+      var loadDistrict = function (districtName, url) {
+        var populate = function (response) {
+          var selectEl = document.getElementById(districtName);
+          var html = ['<option value="-1">no data</option>'];
+          if (response.data.length) {
+            var html = [
+              '<option value="-1">please select ' + districtName + '</option>'
+            ];
+            var data = response.data;
+            for (var i = 0; i < data.length; i++) {
+              html.push('<option value="' + data[i].id + '">' + data[i].name + '</option>');
+            }
+          }
+          selectEl.innerHTML = html.join('');
+        };
+        return function (parentId) {
+          var selectEl = document.getElementById(districtName);
+          var listenerName = 'on' + districtName.substr(0,1).toUpperCase() + districtName.substr(1) + 'Change';
+          selectEl.innerHTML = '';
+          selectEl.value = "-1";
+          window[listenerName]&&window[listenerName](selectEl);
+          if (parentId && parentId != "-1") {
+            var actionName = districtName + 's';
+            if (districtName == 'city') {
+              actionName = 'cities';
+            }
+            var parentIdName = selectEl.getAttribute('data-parent') + 'Id';
+            $.ajax({
+              url: '__APP__/District/' + actionName,
+              data: parentIdName + '=' + parentId,
+              method: 'POST',
+              success: function (response) {
+                if (response && response.status==1000) {
+                  populate(response);
+                } else {
+                  alert('获取数据失败');
+                }
+              },
+              error: function () {
+                alert('获取数据失败');
+              }
+            });
+          }
+        };
+      };
+      var loadProvince = loadDistrict('province'),
+        loadCity = loadDistrict('city'),
+        loadWifi = loadDistrict('wifi');
+      function onCountryChange(countryEl) {
+        var val = countryEl.value;
+        loadProvince(val);
+      }
+      function onProvinceChange(provinceEl) {
+        var val = provinceEl.value;
+        loadCity(val);
+      }
+      function onCityChange(cityEl) {
+        var val = cityEl.value;
+        loadWifi(val);
+      }
+
+    </script>
+</body>
+</html>

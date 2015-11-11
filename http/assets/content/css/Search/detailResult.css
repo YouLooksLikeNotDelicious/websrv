@@ -1,0 +1,596 @@
+html {
+  background-color: #ebecec;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: " ";
+}
+.clearfix:after {
+  clear: both;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  color: #858585;
+  font-family: "Helvetica Neue", "微软雅黑", Helvetica, Arial, sans-serif;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #858585;
+}
+p,
+ul,
+h1,
+h2,
+h3,
+input[type=checkbox],
+dl,
+dt,
+dd {
+  padding: 0;
+  margin: 0;
+}
+.pull-left {
+  float: left;
+}
+.pull-right {
+  float: right;
+}
+.ml-2 {
+  margin-left: 2px;
+}
+.ml-5 {
+  margin-left: 5px;
+}
+.ml-10 {
+  margin-left: 10px;
+}
+.mr-10 {
+  margin-right: 10px;
+}
+.ml-23 {
+  margin-left: 23px;
+}
+.ml-30 {
+  margin-left: 30px;
+}
+.mr-30 {
+  margin-right: 30px;
+}
+.mt-40 {
+  margin-top: 40px;
+}
+.mt-10 {
+  margin-top: 10px;
+}
+.mt-30 {
+  margin-top: 30px;
+}
+.icon {
+  display: inline-block;
+  margin-bottom: -1px;
+  background-repeat: no-repeat;
+  background-image: url('../../img/icons.png');
+}
+.icon-B1-Jpassword {
+  background-position: 0 0;
+  width: 20px;
+  height: 20px;
+}
+.icon-B1PhoneNumber {
+  background-position: 0 -30px;
+  width: 20px;
+  height: 20px;
+}
+.icon-B2-2dropdown {
+  background-position: 0 -60px;
+  width: 8px;
+  height: 12px;
+}
+.icon-B2-2answer {
+  background-position: 0 -82px;
+  width: 20px;
+  height: 20px;
+}
+.icon-B2-2qusetion {
+  background-position: 0 -112px;
+  width: 20px;
+  height: 20px;
+}
+.icon-B2-3passwordreset {
+  background-position: 0 -142px;
+  width: 20px;
+  height: 20px;
+}
+.icon-Button-download {
+  background-position: 0 -172px;
+  width: 15px;
+  height: 11px;
+}
+.icon-Button-money {
+  background-position: 0 -193px;
+  width: 14px;
+  height: 14px;
+}
+.icon-I-App {
+  background-position: 0 -217px;
+  width: 30px;
+  height: 30px;
+}
+.icon-I-Music {
+  background-position: 0 -257px;
+  width: 30px;
+  height: 30px;
+}
+.icon-I-Video {
+  background-position: 0 -297px;
+  width: 30px;
+  height: 30px;
+}
+.icon-I-Wallpaper {
+  background-position: 0 -337px;
+  width: 30px;
+  height: 30px;
+}
+.icon-I-game {
+  background-position: 0 -377px;
+  width: 30px;
+  height: 30px;
+}
+.icon-I-money-orange {
+  background-position: 0 -417px;
+  width: 14px;
+  height: 14px;
+}
+.icon-J-card {
+  background-position: 0 -441px;
+  width: 20px;
+  height: 20px;
+}
+.icon-earphone {
+  background-position: 0 -471px;
+  width: 45px;
+  height: 45px;
+}
+.icon-earphone_small {
+  background-position: 0 -526px;
+  width: 30px;
+  height: 30px;
+}
+.icon-nextpage-disabled {
+  background-position: 0 -566px;
+  width: 16px;
+  height: 12px;
+}
+.icon-nextpage {
+  background-position: 0 -588px;
+  width: 16px;
+  height: 12px;
+}
+.icon-play-small {
+  background-position: 0 -610px;
+  width: 30px;
+  height: 30px;
+}
+.icon-play {
+  background-position: 0 -650px;
+  width: 45px;
+  height: 45px;
+}
+.icon-previouspage-disabled {
+  background-position: 0 -705px;
+  width: 16px;
+  height: 12px;
+}
+.icon-previouspage {
+  background-position: 0 -727px;
+  width: 16px;
+  height: 12px;
+}
+.icon-searchBar-cancel {
+  background-position: 0 -749px;
+  width: 13px;
+  height: 13px;
+}
+.icon-search-Bar-Search2 {
+  background-position: 0 -772px;
+  width: 24px;
+  height: 25px;
+}
+.icon-search-Bar-back {
+  background-position: 0 -807px;
+  width: 16px;
+  height: 24px;
+}
+@media (-webkit-min-device-pixel-ratio: 1.5) {
+  .icon {
+    background-size: 45px 831px;;
+    background-image: url(../../img/icons@2x.png);
+  }
+}
+.btn {
+  border: none;
+  border-radius: 3px;
+  padding: 7px 4px;
+  width: 73px;
+  text-align: center;
+  color: white;
+  font-size: 12px;
+  line-height: 1;
+  height: 30px;
+  display: inline-block;
+  text-decoration: none;
+  white-space: nowrap;
+  word-break: keep-all;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.btn:disabled {
+  background-color: #e0dedf;
+  color: #b5b5b5;
+  text-shadow: 1px 1px 1px white;
+}
+.btn-success {
+  background: #099fde;
+}
+.btn-primary {
+  background: #e86e1d;
+}
+.btn-danger {
+  background: #ed5565;
+}
+.button-wrapper {
+  padding: 0 30px;
+  height: 35px;
+}
+.form-btn {
+  width: 100%;
+  height: 100%;
+  padding: 10px 0;
+  font-size: 14px;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.navigation {
+  position: relative;
+  height: 48px;
+  padding: 8px 10px;
+  background-color: #e86e1d;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.navigation-item {
+  float: left;
+  width: 40px;
+  height: 32px;
+  position: relative;
+  text-align: left;
+  z-index: 2;
+}
+.navigation-title {
+  float: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  line-height: 48px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: normal;
+  color: white;
+}
+.icon-search-Bar-back {
+  margin-top: 4px;
+}
+.menu {
+  display: table;
+  width: 100%;
+  padding: 0 10px;
+  border-bottom: 1px solid #e66f1f;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.menu li {
+  position: relative;
+  display: table-cell;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.menu a {
+  padding-top: 11px;
+  padding-bottom: 9px;
+  color: #858585;
+  display: block;
+  text-decoration: none;
+  white-space: nowrap;
+  word-break: keep-all;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.menu a:hover {
+  color: #e97e36;
+}
+.menu .screenCateMusic,
+.menu .screenCatePic,
+.menu .screenCateApp {
+  display: none;
+}
+.menu .moreCate {
+  position: absolute;
+  z-index: 9;
+  top: 2.6em;
+  left: 0;
+  display: none;
+  width: 100%;
+  background: #EBECEC;
+  color: #858585;
+}
+.menu .moreCate li {
+  display: block;
+  border-bottom: 1px solid #ccc;
+}
+.menu li:hover .moreCate {
+  display: block;
+}
+@media screen and (min-width: 360px) {
+  .menu .screenCateMusic {
+    display: block;
+  }
+  .menu .moreCate li:first-child {
+    display: none;
+  }
+}
+@media screen and (min-width: 720px) {
+  .menu .screenCateMusic,
+  .menu .screenCatePic,
+  .menu .screenCateApp {
+    display: table-cell;
+  }
+  .menu .moreLi {
+    display: none;
+  }
+}
+.active a {
+  color: #e97e36;
+  border-bottom: 2px solid #e66f1f;
+}
+/*navigation*/
+.pagebar {
+  margin: 20px auto 1px auto;
+  /*max-width: 780px;*/
+  background-color: white;
+}
+.prev,
+.next {
+  width: 50%;
+  float: left;
+  display: block;
+  box-sizing: border-box;
+  text-align: center;
+  padding: 10px 0;
+  text-decoration: none;
+  color: #e86e1d;
+  font-size: 12px;
+  font-weight: bold;
+}
+.prev.disabled,
+.next.disabled {
+  color: #bfbfbf;
+}
+/*end navigation*/
+/* 试听弹窗 */
+.centered-modal-ct {
+  /*兼容Android2.x的fixed元素*/
+  display: none;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 15px;
+  overflow: visible;
+  text-align: center;
+  z-index: 100;
+}
+.centered-modal-ct.open {
+  display: block;
+}
+.centered-modal {
+  display: inline-block;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px 10px 10px 10px;
+  -moz-box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.3);
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.centered-modal .close-btn {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  border: none;
+  font-size: 18px;
+  margin: 0;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  background-color: white;
+  border-radius: 13px;
+  box-shadow: 2px -2px 3px 0 rgba(0, 0, 0, 0.2);
+}
+.music-player {
+  width: 96%;
+  max-width: 360px;
+  padding: 10px 20px;
+}
+.music-player .label {
+  width: 100%;
+}
+.music-player audio {
+  width: 100%;
+  margin-top: 10px;
+}
+.nowrap-text {
+  white-space: nowrap;
+  word-break: keep-all;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* end 试听弹窗 */
+.search-input {
+  position: absolute;
+  left: 5rem;
+  right: 5rem;
+  top: 6px;
+  bottom: 6px;
+}
+.search-input input {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0 12px;
+  font-size: 18px;
+  color: #858585;
+  border-radius: 3px;
+  border: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.content-list {
+  margin-top: 4px;
+}
+.content-list li {
+  width: 100%;
+  padding: 0 6px;
+  float: left;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.content-list li:nth-child(2n+1) {
+  background-color: white;
+}
+.content {
+  padding: 8px 4px;
+  display: block;
+  position: relative;
+}
+.content .btn {
+  position: absolute;
+  right: 5px;
+}
+.is-ios .content .btn {
+  visibility: hidden;
+}
+.download-duration {
+  position: absolute;
+  bottom: 8px;
+  right: 5px;
+  color: #0899dc;
+  font-size: 12px;
+  font-style: italic;
+}
+.app-icon {
+  float: left;
+  width: 48px;
+  height: 48px;
+  background-size: cover;
+  background-position: center center;
+}
+.media-icon {
+  float: left;
+  position: relative;
+  color: rgba(255, 255, 255, 0.7);
+  width: 48px;
+  height: 60px;
+  margin-top: -6px;
+  margin-bottom: -6px;
+  background-size: cover;
+  background-position: center center;
+}
+.play-btn {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+.content-info {
+  height: 48px;
+  top: 8px;
+  left: 62px;
+  right: 80px;
+  position: absolute;
+}
+.buyed .content-info {
+  right: 75px;
+}
+.content-title {
+  white-space: nowrap;
+  word-break: keep-all;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: bold;
+  display: inline-block;
+  width: 100%;
+}
+.content-desc {
+  position: absolute;
+  bottom: 0;
+  max-height: 30px;
+  width: 100%;
+  line-height: 15px;
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #b5b5b5;
+}
+.favourBanner {
+  position: relative;
+  width: 100%;
+  height: 150px;
+  background-size: cover;
+}
+.favourBanner button {
+  width: 100%;
+  height: 100%;
+}
+.favourBanner .link {
+  display: block;
+  position: absolute;
+  right: 26px;
+  bottom: 26px;
+  width: 128px;
+  height: 36px;
+  line-height: 36px;
+  text-align: center;
+  font-size: 17px;
+  background: #f98c00;
+  color: #fff;
+  border-radius: 6px;
+}
+.no-data {
+  font-size: 14px;
+  padding: 10px;
+  text-align: center;
+  text-shadow: 1px 1px 1px white;
+}
+/*# sourceMappingURL=./content/css/Search/detailResult.css.map */

@@ -1,0 +1,22 @@
+@import 'variables.less';
+@import 'variables-custom.less';
+@import 'mixins.less';
+
+.cy-pager {
+    padding: 0 0.5rem;
+
+    text-align: center;
+    .page-num {
+        display: inline-block;
+        padding: 0 1rem;
+
+        line-height: 2.5rem;
+        font-size: 0.7rem;
+        color: @text-color-darker;
+    }
+    .prev, .next {
+        padding: 0 1rem;
+        width: 0.65rem;
+        height: 0.65rem;
+    }
+}

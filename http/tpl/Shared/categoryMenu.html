@@ -1,0 +1,53 @@
+<ul class="menu clearfix">
+  <if condition="_isSubPage eq TRUE">
+    <li class='{_active["main"]}'>
+        <a href="javascript:locate('__APP__/Main/index', false)">Home</a>
+    </li>
+    <li class='{_active["getfavour"]}'><a href="javascript:locate('__APP__/Content/getfavour')">Favourite</a></li>
+    <if condition="_isIos eq 0">
+        <li class='{_active["game"]}'><a href="javascript:locate('__APP__/Content/listPage?type=game&count=10', false)">Games</a></li>
+    </if>
+    <li class='{_active["video"]}'><a href="javascript:locate('__APP__/Content/listPage?type=video&count=10', false)">Videos</a></li>
+    <li class='{_active["music"]} screenCateMusic'><a href="javascript:locate('__APP__/Content/listPage?type=music&count=10', false)">Music</a></li>
+    <li class='{_active["picture"]} screenCatePic'><a href="javascript:locate('__APP__/Content/listPage?type=picture&count=4', false)">Pictures</a></li>
+    <if condition="_isIos eq 0">
+        <li class='{_active["soft"]} screenCateApp'><a href="javascript:locate('__APP__/Content/listPage?type=soft&count=10', false)">Apps</a></li>
+    </if>
+    <li class="moreLi">
+        <a href="javascript:void(0);" >More</a>
+        <div class="moreCate">
+            <ul>
+                <li class='{_active["music"]}'><a href="javascript:locate('__APP__/Content/listPage?type=music', false)">Music</a></li>
+                <li class='{_active["picture"]}'><a href="javascript:locate('__APP__/Content/listPage?type=picture&count=4', false)">Pictures</a></li>
+                <if condition="_isIos eq 0">
+                    <li class='{_active["soft"]}'><a href="javascript:locate('__APP__/Content/listPage?type=soft&count=10', false)">Apps</a></li>
+                </if>
+            </ul>
+        </div>
+    </li> 
+  <else />
+    <li class='{_active["main"]}'><a href="javascript:locate('__APP__/Main/index')">Home</a></li>
+    <li class='{_active["getfavour"]}'><a href="javascript:locate('__APP__/Content/getfavour')">Favourite</a></li>
+    <if condition="_isIos eq 0">
+        <li class='{_active["game"]}'><a href="javascript:locate('__APP__/Content/listPage?type=game&count=10')">Games</a></li>
+    </if>
+    <li class='{_active["video"]}'><a href="javascript:locate('__APP__/Content/listPage?type=video&count=10')">Videos</a></li>
+    <li class='{_active["music"]} screenCateMusic'><a href="javascript:locate('__APP__/Content/listPage?type=music&count=10')">Music</a></li>
+    <li class='{_active["picture"]} screenCatePic'><a href="javascript:locate('__APP__/Content/listPage?type=picture&count=4')">Pictures</a></li>
+    <if condition="_isIos eq 0">
+        <li class='{_active["soft"]} screenCateApp'><a href="javascript:locate('__APP__/Content/listPage?type=soft&count=10')">Apps</a></li>
+    </if>
+    <li class="moreLi">
+        <a href="javascript:void(0);" >More</a>
+        <div class="moreCate">
+            <ul>
+                <li class='{_active["music"]}'><a href="javascript:locate('__APP__/Content/listPage?type=music')">Music</a></li>
+                <li class='{_active["picture"]}'><a href="javascript:locate('__APP__/Content/listPage?type=picture&count=4')">Pictures</a></li>
+                <if condition="_isIos eq 0">
+                    <li class='{_active["soft"]}'><a href="javascript:locate('__APP__/Content/listPage?type=soft&count=10')">Apps</a></li>
+                </if>
+            </ul>
+        </div>
+    </li> 
+  </if>
+</ul>

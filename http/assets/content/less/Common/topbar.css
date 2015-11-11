@@ -1,0 +1,61 @@
+.cy-topbar {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 4.4rem;
+  padding: 0.4rem 1.5rem;
+  border-bottom: 1px solid #cccccc;
+  background-color: #efefef;
+}
+.cy-topbar:before,
+.cy-topbar:after {
+  content: " ";
+  display: table;
+}
+.cy-topbar:after {
+  clear: both;
+}
+.cy-topbar .logo {
+  position: relative;
+  z-index: 1;
+  float: left;
+  display: table;
+  height: 100%;
+}
+.cy-topbar .logo .logo-inner {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  padding: 0 0.6rem;
+}
+.cy-topbar .logo .logo-inner .icon {
+  display: block;
+}
+.cy-topbar .actions {
+  float: right;
+  display: table;
+  height: 100%;
+}
+.cy-topbar .actions .action-btn {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  padding: 0 0.6rem;
+}
+.cy-topbar .actions .action-btn .icon {
+  display: block;
+}
+.cy-topbar .title {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  color: #434a54;
+  font-size: 1.5rem;
+  line-height: 4.4rem;
+}

@@ -1,0 +1,37 @@
+@baseUrl: '../Common/';
+
+@import '@{baseUrl}variables.less';
+@import '@{baseUrl}variables-custom.less';
+@import '@{baseUrl}mixins.less';
+@import '@{baseUrl}normalize.less';
+@import '@{baseUrl}common.less';
+@import '@{baseUrl}button.less';
+@import '@{baseUrl}icons.less';
+@import '@{baseUrl}item.less';
+@import '@{baseUrl}topbar.less';
+
+@import '../Shared/variable.less';
+@import '../Shared/mixins.less';
+
+@import '../Search/shared/navigation.less';
+@import './result/content.less';
+
+.no-data {
+    font-size: @baseFontSize;
+    padding: 10px;
+
+    text-align: center;
+    text-shadow: 1px 1px 1px white;
+}
+
+.item-horizontal-compact .item-logo {
+    height: 3.4rem;
+}
+.video-list {
+    .item-horizontal-compact {
+        height: 4.8rem;
+        .item-logo {
+            height: 3.8rem;
+        }
+    }
+}

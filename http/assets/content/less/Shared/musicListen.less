@@ -1,0 +1,60 @@
+/* 试听弹窗 */
+.centered-modal-ct {
+  /*兼容Android2.x的fixed元素*/
+  display: none;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 15px;
+  overflow: visible;
+  text-align: center;
+  z-index: 100;
+  &.open {
+    display: block;
+  }
+}
+.centered-modal {
+  display: inline-block;
+  position: relative;
+  background-color: rgba(255,255,255, .9);
+  padding: 20px 10px 10px 10px;
+  -moz-box-shadow: 0 0 3px 2px rgba(0,0,0,.3);
+  -webkit-box-shadow: 0 0 3px 2px rgba(0,0,0,.3);
+  box-shadow: 0 0 3px 2px rgba(0,0,0,.3);
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  .close-btn {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    border: none;
+    font-size: 18px;
+    margin: 0;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    background-color: white;
+    border-radius: 13px;
+    box-shadow: 2px -2px 3px 0 rgba(0,0,0,.2);
+  }
+}
+.music-player {
+  width: 96%;
+  max-width: 360px;
+  padding: 10px 20px;
+  .label {
+    width: 100%;
+  }
+  audio {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+.nowrap-text{
+  white-space: nowrap;
+  word-break: keep-all;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* end 试听弹窗 */

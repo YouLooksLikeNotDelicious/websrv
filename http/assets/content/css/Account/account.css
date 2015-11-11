@@ -1,0 +1,380 @@
+html {
+  background-color: #ebecec;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: " ";
+}
+.clearfix:after {
+  clear: both;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  color: #858585;
+  font-family: "Helvetica Neue", "微软雅黑", Helvetica, Arial, sans-serif;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #858585;
+}
+p,
+ul,
+h1,
+h2,
+h3,
+input[type=checkbox],
+dl,
+dt,
+dd {
+  padding: 0;
+  margin: 0;
+}
+.pull-left {
+  float: left;
+}
+.pull-right {
+  float: right;
+}
+.ml-2 {
+  margin-left: 2px;
+}
+.ml-5 {
+  margin-left: 5px;
+}
+.ml-10 {
+  margin-left: 10px;
+}
+.mr-10 {
+  margin-right: 10px;
+}
+.ml-23 {
+  margin-left: 23px;
+}
+.ml-30 {
+  margin-left: 30px;
+}
+.mr-30 {
+  margin-right: 30px;
+}
+.mt-40 {
+  margin-top: 40px;
+}
+.mt-10 {
+  margin-top: 10px;
+}
+.mt-30 {
+  margin-top: 30px;
+}
+.icon {
+  display: inline-block;
+  margin-bottom: -1px;
+  background-repeat: no-repeat;
+  background-image: url('../../img/icons.png');
+}
+.icon-B1-Jpassword {
+  background-position: 0 0;
+  width: 20px;
+  height: 20px;
+}
+.icon-B1PhoneNumber {
+  background-position: 0 -30px;
+  width: 20px;
+  height: 20px;
+}
+.icon-B2-2dropdown {
+  background-position: 0 -60px;
+  width: 8px;
+  height: 12px;
+}
+.icon-B2-2answer {
+  background-position: 0 -82px;
+  width: 20px;
+  height: 20px;
+}
+.icon-B2-2qusetion {
+  background-position: 0 -112px;
+  width: 20px;
+  height: 20px;
+}
+.icon-B2-3passwordreset {
+  background-position: 0 -142px;
+  width: 20px;
+  height: 20px;
+}
+.icon-Button-download {
+  background-position: 0 -172px;
+  width: 15px;
+  height: 11px;
+}
+.icon-Button-money {
+  background-position: 0 -193px;
+  width: 14px;
+  height: 14px;
+}
+.icon-I-App {
+  background-position: 0 -217px;
+  width: 30px;
+  height: 30px;
+}
+.icon-I-Music {
+  background-position: 0 -257px;
+  width: 30px;
+  height: 30px;
+}
+.icon-I-Video {
+  background-position: 0 -297px;
+  width: 30px;
+  height: 30px;
+}
+.icon-I-Wallpaper {
+  background-position: 0 -337px;
+  width: 30px;
+  height: 30px;
+}
+.icon-I-game {
+  background-position: 0 -377px;
+  width: 30px;
+  height: 30px;
+}
+.icon-I-money-orange {
+  background-position: 0 -417px;
+  width: 14px;
+  height: 14px;
+}
+.icon-J-card {
+  background-position: 0 -441px;
+  width: 20px;
+  height: 20px;
+}
+.icon-earphone {
+  background-position: 0 -471px;
+  width: 45px;
+  height: 45px;
+}
+.icon-earphone_small {
+  background-position: 0 -526px;
+  width: 30px;
+  height: 30px;
+}
+.icon-nextpage-disabled {
+  background-position: 0 -566px;
+  width: 16px;
+  height: 12px;
+}
+.icon-nextpage {
+  background-position: 0 -588px;
+  width: 16px;
+  height: 12px;
+}
+.icon-play-small {
+  background-position: 0 -610px;
+  width: 30px;
+  height: 30px;
+}
+.icon-play {
+  background-position: 0 -650px;
+  width: 45px;
+  height: 45px;
+}
+.icon-previouspage-disabled {
+  background-position: 0 -705px;
+  width: 16px;
+  height: 12px;
+}
+.icon-previouspage {
+  background-position: 0 -727px;
+  width: 16px;
+  height: 12px;
+}
+.icon-searchBar-cancel {
+  background-position: 0 -749px;
+  width: 13px;
+  height: 13px;
+}
+.icon-search-Bar-Search2 {
+  background-position: 0 -772px;
+  width: 24px;
+  height: 25px;
+}
+.icon-search-Bar-back {
+  background-position: 0 -807px;
+  width: 16px;
+  height: 24px;
+}
+@media (-webkit-min-device-pixel-ratio: 1.5) {
+  .icon {
+    background-size: 45px 831px;;
+    background-image: url(../../img/icons@2x.png);
+  }
+}
+.navigation {
+  position: relative;
+  height: 48px;
+  padding: 8px 10px;
+  background-color: #e86e1d;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.navigation-item {
+  float: left;
+  width: 40px;
+  height: 32px;
+  position: relative;
+  text-align: left;
+  z-index: 2;
+}
+.navigation-title {
+  float: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  line-height: 48px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: normal;
+  color: white;
+}
+.icon-search-Bar-back {
+  margin-top: 4px;
+}
+.btn {
+  border: none;
+  border-radius: 3px;
+  padding: 7px 4px;
+  width: 73px;
+  text-align: center;
+  color: white;
+  font-size: 12px;
+  line-height: 1;
+  height: 30px;
+  display: inline-block;
+  text-decoration: none;
+  white-space: nowrap;
+  word-break: keep-all;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.btn:disabled {
+  background-color: #e0dedf;
+  color: #b5b5b5;
+  text-shadow: 1px 1px 1px white;
+}
+.btn-success {
+  background: #099fde;
+}
+.btn-primary {
+  background: #e86e1d;
+}
+.btn-danger {
+  background: #ed5565;
+}
+.button-wrapper {
+  padding: 0 30px;
+  height: 35px;
+}
+.form-btn {
+  width: 100%;
+  height: 100%;
+  padding: 10px 0;
+  font-size: 14px;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.info-block {
+  position: relative;
+  padding: 10px 10px 10px 30px;
+  margin-top: 10px;
+  background-color: white;
+}
+.user-name {
+  font-size: 18px;
+}
+.balance {
+  margin-top: 5px;
+}
+.money {
+  font-size: 12px;
+  color: #e86e1d;
+}
+.recharge-btn {
+  position: absolute;
+  height: 15px;
+  line-height: 15px;
+  bottom: 10px;
+  right: 10px;
+  padding: 3px 5px;
+}
+.history-title {
+  font-size: 18px;
+  text-shadow: 1px 1px 1px white;
+  color: #b5b5b5;
+  padding: 10px;
+}
+.content-block {
+  padding: 2px 10px;
+  background-color: white;
+}
+.content-block li {
+  float: left;
+  width: 50%;
+  padding: 3px 10px;
+  border-right: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.history-list {
+  position: relative;
+  /*用于遮掩右下角的边框*/
+}
+.history-list:before {
+  position: absolute;
+  content: ' ';
+  height: 1px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+}
+.history-list:after {
+  position: absolute;
+  content: ' ';
+  height: 100%;
+  width: 1px;
+  right: 0;
+  top: 0;
+  background-color: white;
+}
+.category {
+  display: block;
+  position: relative;
+  line-height: 36px;
+  height: 36px;
+}
+.category .icon {
+  margin-right: 10px;
+  vertical-align: middle;
+}
+.category .name {
+  vertical-align: middle;
+}
+.purchase-count {
+  position: absolute;
+  right: 10px;
+  font-size: 13px;
+  color: #b5b5b5;
+}
+/*# sourceMappingURL=./content/css/Account/account.css.map */

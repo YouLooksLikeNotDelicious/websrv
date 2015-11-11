@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<php>
+std::string _cssName;
+</php>
+<if condition="_isIos eq 1">
+  <assign name="cssName" value="is-ios" />
+</if>
+<html class="{_cssName}">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" />
+  <title>
+    <block name="title">未命名页面</block>
+  </title>
+  <block name="head"></block>
+</head>
+<body style="padding-bottom: 50px">
+  {/*<div style="max-width: 360px; margin: 0 auto; position: relative;">*/}
+    <block name="body"></block>
+  {/*</div>*/}
+  <script type="text/javascript">
+    var ROOT = '__APP__';
+    <php>
+    std::string _rand = htmlentities(_GET("track"), ENT_COMPAT, "UTF-8");
+    if (_rand.empty()) {
+      _rand = std::to_string(rand());
+    }
+    int* _ptr_isLogin = (int*)session_get(context, "isLogin");
+    int _isLogin = 0;
+    if ( _ptr_isLogin != NULL ) {
+      _isLogin = *_ptr_isLogin;
+    }
+    </php>
+    var g_track = '{_rand}';
+    var g_isLogin  = {_isLogin|std::to_string};
+  </script>
+  <script src="__SCRIPT__/common/common.js?v=1111161208"></script>
+  <block name="script"></block>
+</body>
+</html>

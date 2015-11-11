@@ -1,0 +1,82 @@
+<extend name="Shared:layout" />
+<block name="title">Personal Information</block>
+
+<block name="head">
+  <link rel="stylesheet" href="__CSS__/Account/account.css" />
+</block>
+
+<block name="body">
+  <include file="Shared:navigation" title="Personal Information" />
+  <div class="info-block">
+    <h2 class="user-name">{_user.userName}</h2>
+    <p class="balance">
+      <span>Balance: </span>
+      <i class="icon icon-I-money-orange"></i>
+      <span class="money">{_user.balance}</span>
+    </p>
+    <a href="javascript:locate('__APP__/Account/rechargePage')" class="btn btn-primary recharge-btn">Recharge</a>
+  </div>
+  <h2 class="history-title"></h2>
+  <div class="content-block">
+    <div class="history-list">
+      <ul class="clearfix">
+        <li>
+          <a class="category">
+            <i class="icon icon-I-game"></i>
+            <span class="name">Games</span>
+            <span class="purchase-count">{_user.buyedGameCount | std::to_string}</span>
+          </a>
+        </li>
+        <li>
+          <a class="category">
+            <i class="icon icon-I-Video"></i>
+            <span class="name">Videos</span>
+            <span class="purchase-count">{_user.buyedVideoCount | std::to_string} </span>
+          </a>
+        </li>
+        <li>
+          <a class="category">
+            <i class="icon icon-I-Music"></i>
+            <span class="name">Music</span>
+            <span class="purchase-count">{_user.buyedMusicCount | std::to_string} </span>
+          </a>
+        </li>
+        <li>
+          <a class="category">
+            <i class="icon icon-I-Wallpaper"></i>
+            <span class="name">Pictures</span>
+            <span class="purchase-count">{_user.buyedPictureCount | std::to_string} </span>
+          </a>
+        </li>
+        <li>
+          <a class="category">
+            <i class="icon icon-I-App"></i>
+            <span class="name">Apps</span>
+            <span class="purchase-count">{_user.buyedSoftCount | std::to_string} </span>
+          </a>
+        </li>
+        <li>
+          <a class="category">
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="mt-40">
+    <div class="button-wrapper">
+      <a href="javascript:locate('__APP__/Account/changePasswordPage')" type="button" class="btn btn-success form-btn">
+        Change password
+      </a>
+    </div>
+  </div>
+  <div class="mt-10">
+    <div class="button-wrapper">
+      <button onclick="locate('__APP__/Account/logout', 'clear');" type="button" class="btn btn-primary form-btn">
+        Sign out
+      </button>
+    </div>
+  </div>
+</block>
+
+<block name="script">
+</block>

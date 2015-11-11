@@ -1,0 +1,438 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html {
+  width: 100%;
+  font-size: 20px;
+  -webkit-text-size-adjust: none;
+}
+body {
+  margin: 0 auto;
+  font-family: 'Microsoft Yahei', '黑体', 'Ubuntu';
+  background-color: #efefef;
+  font-size: 12px;
+}
+p {
+  color: #99a3b1;
+  font-size: 12px;
+  line-height: 1.4;
+}
+a {
+  text-decoration: none;
+  color: #99a3b1;
+}
+.img-responsive,
+.video-responsive {
+  width: 100%;
+  height: auto;
+  -webkit-text-adjust: none;
+}
+.lead-title {
+  color: #434a54;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.4;
+}
+.unstyled-list {
+  margin-left: 0;
+  list-style: none;
+}
+.hidden {
+  display: none !important;
+}
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.left-rect {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+.right-rect {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+.flat-container {
+  display: block;
+  width: 100%;
+  margin: 0.4rem 0;
+}
+.flat-container.compact {
+  padding: 0 0.4rem;
+}
+.flat-container.slim {
+  margin: 0.25rem 0;
+  padding: 0 0.25rem;
+}
+.block-flat {
+  display: block;
+  width: 100%;
+  background-color: #fff;
+  border-bottom: 1px solid #cccccc;
+}
+.block-flat .header {
+  position: relative;
+  padding: 0.6rem 0.6rem 0;
+  margin-bottom: 0.6rem;
+}
+.block-flat .header > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.block-flat .header .title {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: normal;
+  font-size: 0.7rem;
+  color: #434a54;
+}
+.block-flat .header .subtitle {
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+  font-weight: normal;
+  font-size: 12px;
+  color: #99a3b1;
+}
+.block-flat .header .action {
+  position: absolute;
+  right: 0.6rem;
+  top: 0.6rem;
+}
+.block-flat .header .action > a,
+.block-flat .header .action > span {
+  font-size: 0.6rem;
+  color: #ff7d13;
+}
+.block-flat .content {
+  margin-top: 0.6rem;
+  padding: 0 0.6rem 0.6rem;
+}
+.block-flat .content.no-top-padding {
+  padding-top: 0;
+  margin-top: 0;
+}
+.block-flat-simple {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  background-color: #fff;
+  border-bottom: 1px solid #cccccc;
+}
+.block-flat-simple .header {
+  position: relative;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #cccccc;
+}
+.block-flat-simple .header > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.block-flat-simple .header .title {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: normal;
+  font-size: 0.7rem;
+  color: #434a54;
+}
+.block-flat-simple .header .subtitle {
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+  font-weight: normal;
+  font-size: 12px;
+  color: #99a3b1;
+}
+.block-flat-simple .header .action {
+  position: absolute;
+  right: 0.75rem;
+  top: 0;
+}
+.block-flat-simple .header .action > a,
+.block-flat-simple .header .action > span {
+  font-size: 0.6rem;
+  color: #ff7d13;
+}
+.block-flat-simple .content {
+  padding-top: 0.5rem;
+}
+.block-flat-simple .content.no-top-padding {
+  padding-top: 0;
+}
+.block-fixed {
+  position: fixed;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 2.5rem;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}
+.block-fixed.fixed-to-bottom {
+  bottom: 0;
+}
+.btn {
+  display: inline-block;
+  width: 3.4rem;
+  max-width: 100%;
+  height: 1.25rem;
+  line-height: 1.25rem;
+  font-size: 0.6rem;
+  color: #333333;
+  text-align: center;
+  border: 1px solid #333333;
+  border-radius: 0.15rem;
+  background-color: transparent;
+  cursor: pointer;
+}
+.btn:active {
+  background-color: #333333;
+  color: #ffffff;
+  outline: none;
+}
+.btn.btn-primary {
+  border-color: #099fde;
+  color: #099fde;
+}
+.btn.btn-primary:active {
+  background-color: #099fde;
+  color: #fff;
+}
+.btn-reverse {
+  display: inline-block;
+  width: 3.75rem;
+  height: 1.25rem;
+  line-height: 1.25rem;
+  font-size: 0.6rem;
+  color: #333333;
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 0.15rem;
+  border: none;
+  cursor: pointer;
+}
+.btn-reverse:active {
+  background-color: #e6e6e6;
+  outline: none;
+}
+.btn.btn-block,
+.btn-reverse.btn-block {
+  height: 2rem;
+  width: 100%;
+  line-height: 2rem;
+  font-size: 14px;
+}
+/*
+ * Tue Jun 02 2015 13:05:13 GMT+0800 (CST)
+ * Here is the sprite plugin automatically generated style file.
+ */
+.icon {
+  display: inline-block;
+  background-image: url(../../img/sprite.png);
+  background-repeat: no-repeat;
+  background-image: -webkit-image-set(url(../../img/sprite.png) 1x, url(../../img/sprite@2x.png) 2x);
+}
+.icon-app {
+  background-position: -6px -6px;
+  width: 35px;
+  height: 35px;
+}
+.icon-back {
+  background-position: -6px -47px;
+  width: 9px;
+  height: 17px;
+}
+.icon-download {
+  background-position: -6px -70px;
+  width: 22px;
+  height: 23px;
+}
+.icon-game {
+  background-position: -6px -99px;
+  width: 35px;
+  height: 35px;
+}
+.icon-more {
+  background-position: -6px -140px;
+  width: 6px;
+  height: 10px;
+}
+.icon-next-double-disable {
+  background-position: -6px -156px;
+  width: 13px;
+  height: 13px;
+}
+.icon-next-double {
+  background-position: -6px -175px;
+  width: 13px;
+  height: 13px;
+}
+.icon-play {
+  background-position: -6px -194px;
+  width: 75px;
+  height: 75px;
+}
+.icon-previous-double-disable {
+  background-position: -6px -275px;
+  width: 13px;
+  height: 13px;
+}
+.icon-previous-double {
+  background-position: -6px -294px;
+  width: 13px;
+  height: 13px;
+}
+.icon-search {
+  background-position: -6px -313px;
+  width: 22px;
+  height: 22px;
+}
+.icon-tip {
+  background-position: -6px -341px;
+  width: 21px;
+  height: 19px;
+}
+.icon-triangle-down {
+  background-position: -6px -366px;
+  width: 10px;
+  height: 6px;
+}
+.icon-video {
+  background-position: -6px -378px;
+  width: 35px;
+  height: 35px;
+}
+.cy-topbar {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 2.2rem;
+  padding: 0.2rem 0.75rem;
+  border-bottom: 1px solid #cccccc;
+  background-color: #efefef;
+}
+.cy-topbar:before,
+.cy-topbar:after {
+  content: " ";
+  display: table;
+}
+.cy-topbar:after {
+  clear: both;
+}
+.cy-topbar:before,
+.cy-topbar:after {
+  content: " ";
+  display: table;
+}
+.cy-topbar:after {
+  clear: both;
+}
+.cy-topbar .logo {
+  position: relative;
+  z-index: 1;
+  float: left;
+  display: table;
+  height: 100%;
+}
+.cy-topbar .logo .logo-inner {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  padding: 0 0.6rem;
+}
+.cy-topbar .logo .logo-inner .icon {
+  display: block;
+}
+.cy-topbar .actions {
+  position: relative;
+  z-index: 1;
+  float: right;
+  display: table;
+  height: 100%;
+}
+.cy-topbar .actions .action-btn {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  padding: 0 0.3rem;
+}
+.cy-topbar .actions .action-btn .icon {
+  display: block;
+}
+.cy-topbar .title {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  color: #434a54;
+  font-size: 16px;
+  line-height: 2.2rem;
+}
+.title {
+  font-size: 18px;
+  text-shadow: 1px 1px 1px white;
+  color: #b5b5b5;
+  padding: 10px;
+}
+.history-list {
+  background-color: white;
+  padding: 0 10px;
+}
+.history-list a {
+  display: block;
+}
+.history-list li {
+  line-height: 40px;
+  font-size: 17px;
+  color: #858585;
+  border-bottom: 1px solid #cccccc;
+}
+.history-list li:last-child {
+  border-bottom: none;
+}
+.search-input {
+  position: absolute;
+  left: 5rem;
+  right: 5rem;
+  top: 6px;
+  bottom: 6px;
+}
+.search-input input {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0 12px;
+  font-size: 18px;
+  color: #858585;
+  border-radius: 3px;
+  border: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/*# sourceMappingURL=./content/css/Search/index.css.map */

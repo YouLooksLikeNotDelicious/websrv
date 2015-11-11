@@ -1,0 +1,74 @@
+<extend name="Shared:layout" />
+<block name="title">Forget Password</block>
+
+<block name="head">
+  <link rel="stylesheet" href="__CSS__/Account/form.css" />
+</block>
+
+<block name="body">
+  <include file="Shared:navigation" title="Forget Password" />
+
+  <div class="main">
+    <form action="__APP__/Account/checkUserName?from=b" method="GET">
+      <fieldset>
+        <div class="control input-control clearfix">
+          <i class="icon icon-B1PhoneNumber"></i>
+          <div class="input-wrapper">
+            <input type="text" class="phone-num" name="userName" id="PhoneNum"
+              placeholder="Phone Number">
+          </div>
+        </div>
+      </fieldset>
+      <div class="control mt-40">
+        <div class="button-wrapper">
+          <button type="button" onclick="submitForm(arguments[0], this);" class="btn btn-success form-btn"
+            data-loading-text="Checking user name...">
+            Next
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</block>
+
+<block name="script">
+  <script>
+    var submitForm = function (e, btn) {
+      var formInfo = getForm(),
+        values = getFields(),
+        validateMsg = validateForm(values),
+        $btn = $(btn);
+      if (!validateMsg) {
+        $btn.button('loading');
+        $.ajax({
+          url: formInfo.url,
+          method: formInfo.method,
+          data: serializeKeyVals(values),
+          success: function (response) {
+            if (response && response.status == 1000) {
+              locate(ROOT + '/Account/forgetSecond', false);
+            } else {
+              alert(response.msg || response.errMsg || 'Checking user name failed!');
+            }
+          },
+          error: function (txtStatus, msg, xhr) {
+              alert('Failed: ' + txtStatus + ', please retry');
+          },
+          complete: function (){
+            $btn.button('reset');
+          }
+        });
+      } else {
+        alert(validateMsg);
+      }
+    };
+    var validateForm = function (vals) {
+      var result = [];
+      if (!$.trim(vals['userName'])) {
+        result.push('Phone number can not be empty.');
+      }
+      return result.join(String.fromCharCode(92) + 'n');
+    };
+  </script>
+</block>
+

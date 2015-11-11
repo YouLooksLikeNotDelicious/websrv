@@ -1,0 +1,80 @@
+<extend name="Shared:layout" />
+<block name="title">Forget Password</block>
+
+<block name="head">
+  <link rel="stylesheet" href="__CSS__/Account/form.css" />
+</block>
+
+<block name="body">
+  <include file="Shared:navigation" title="Forget Password" />
+
+  <div class="main">
+    <form action="__APP__/Account/checkAnswer?from=b" method="POST">
+      <fieldset>
+        <div class="control input-control clearfix">
+          <i class="icon icon-B2-2qusetion"></i>
+          <div class="input-wrapper">
+            <input type="text" value="{_question.name}" readonly>
+          </div>
+        </div>
+        <div class="control input-control clearfix">
+          <i class="icon icon-B2-2answer"></i>
+          <div class="input-wrapper">
+            <input type="text" class="answer" name="answer" id="answer"
+              placeholder="Answer the secret question" />
+          </div>
+        </div>
+      </fieldset>
+      <div class="control mt-40">
+        <div class="button-wrapper">
+          <button type="button" onclick="submitForm(arguments[0], this);"
+            class="btn btn-success form-btn" data-loading-text="Checking answer..">
+            Confirm
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</block>
+
+<block name="script">
+  <script>
+    var submitForm = function (e, btn) {
+      var form = getForm(),
+        vals = getFields(),
+        errMsg = validateForm(vals),
+        $btn = $(btn);
+      if (!errMsg) {
+        var url = form.url;
+        url += '&' + serializeKeyVals(vals);
+        $btn.button('loading');
+        $.ajax({
+          url: url,
+          success: function (response) {
+            if (response.status && response.status == 1000) {
+              locate('__APP__/Account/forgetThird', false);
+            } else {
+              alert(response.msg || response.errMsg || 'Check answer failed.');
+            }
+          },
+          error: function (txtStatus, errMsg) {
+              alert('Failed: ' + txtStatus + ', please retry');
+          },
+          complete: function() {
+            $btn.button('reset');
+          }
+        });
+      } else {
+        alert(errMsg);
+      }
+    };
+    var validateForm = function (vals) {
+      var msg = [];
+      if (!vals.answer) {
+        msg.push('Please input the answer');
+      }
+      return msg.join(String.fromCharCode(92) + 'n');
+    };
+  </script>
+</block>
+

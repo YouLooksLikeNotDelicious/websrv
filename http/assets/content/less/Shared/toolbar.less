@@ -1,0 +1,56 @@
+@toobarIconUrl: '../../img/csg-536b87b0e8f35.png';
+@logoUrl: '../../img/logo.png';
+
+.toolbar {
+    height: @topBarHeight;
+    background-color: @toolbarColor;
+}
+
+.toolbar .icon {
+    display: inline-block;
+    background-image: url(@toobarIconUrl);
+}
+
+.toolbar-btn {
+    height: 100%;
+    padding: 5px;
+    text-align: center;
+
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    &:first-child{
+        padding-right: 10px;
+    }
+}
+
+.logo {
+    display: inline-block;
+    position:relative;
+    top:4px;
+    left:15px;
+}
+.icon-logo {
+    display: inline-block;
+    background-image: url(@logoUrl);
+    width: image-width(@logoUrl);
+    height: image-height(@logoUrl);
+}
+
+.icon-searchBar-Personal{ background-position: 0 0; width: 32px; height: 32px; }
+.icon-search-Bar-Search1{ background-position: 0 -42px; width: 32px; height: 32px; }
+.icon-search-Bar-history{ background-position: 0 -84px; width: 32px; height: 32px; }
+
+@media (-webkit-min-device-pixel-ratio: 1.5) {
+    .toolbar .icon {
+        background-size: image-size(@toobarIconUrl);
+        @highResIconUrl: height-resolute-url(@toobarIconUrl);
+        background-image: url(@highResIconUrl);
+    }
+    .icon-logo {
+        background-size: image-size(@logoUrl);
+        @highLogoUrl: height-resolute-url(@logoUrl);
+        background-image: url(@highLogoUrl);
+    }
+}
+

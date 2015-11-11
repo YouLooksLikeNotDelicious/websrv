@@ -1,0 +1,88 @@
+<extend name="Shared:layout" />
+<block name="title">Forget Password</block>
+
+<block name="head">
+  <link rel="stylesheet" href="__CSS__/Account/form.css" />
+</block>
+
+<block name="body">
+  <include file="Shared:navigation" title="Reset Password" />
+
+  <div class="main">
+    <form action="__APP__/Account/resetPwd?from=b" method="GET">
+      <fieldset>
+        <div class="control input-control clearfix">
+          <i class="icon icon-B1-Jpassword"></i>
+          <div class="input-wrapper">
+            <input type="password" name="password" placeholder="New password, at least 6 letters.">
+          </div>
+        </div>
+        <div class="control input-control clearfix">
+          <i class="icon icon-B1-Jpassword"></i>
+          <div class="input-wrapper">
+            <input type="password" name="confirmpwd" placeholder="Confirm password">
+          </div>
+        </div>
+      </fieldset>
+      <div class="control mt-40">
+        <div class="button-wrapper">
+          <button type="button" onclick="submitForm(arguments[0], this);"
+            class="btn btn-success form-btn" data-loading-text="Submitting...">
+            Confirm
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</block>
+
+<block name="script">
+  <script>
+    var submitForm = function (e, btn) {
+      var form = getForm(),
+        vals = getFields(),
+        errMsg = validateForm(vals),
+        $btn = $(btn);
+      if (!errMsg) {
+        var url = form.url;
+        url += '&' + serializeKeyVals(vals);
+        $btn.button('loading');
+        $.ajax({
+          url: url,
+          success: function (response) {
+            if (response.status && response.status == 1000) {
+              alert('Change password success. Please sign in.');
+              historyBack();
+            } else {
+              alert(response.msg || response.errMsg  || 'Change password failed.');
+            }
+          },
+          error: function (txtStatus, errMsg) {
+              alert('Failed: ' + txtStatus + ', please retry');
+          },
+          complete: function() {
+            $btn.button('reset');
+          }
+        });
+      } else {
+        alert(errMsg);
+      }
+    };
+    var validateForm = function (vals) {
+      var msg = [],
+        pwd = $.trim(vals.password),
+        confirmpwd = $.trim(vals.confirmpwd);
+      if (!pwd) {
+        msg.push('Please input the password.');
+      } else if(pwd.length < 6) {
+        msg.push('Password length must be greater than 6.');
+      } else if(!confirmpwd) {
+        msg.push('Please input the confirm password.');
+      } else if (pwd != confirmpwd) {
+        msg.push('The confirm password is not equal to the password');
+      }
+      return msg.join(String.fromCharCode(92) + 'n');
+    };
+  </script>
+</block>
+

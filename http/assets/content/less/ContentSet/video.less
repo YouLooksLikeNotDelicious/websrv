@@ -1,0 +1,35 @@
+@baseUrl: '../Common/';
+
+@import '@{baseUrl}variables.less';
+@import '@{baseUrl}variables-custom.less';
+@import '@{baseUrl}mixins.less';
+@import '@{baseUrl}normalize.less';
+@import '@{baseUrl}common.less';
+@import '@{baseUrl}button.less';
+@import '@{baseUrl}item.less';
+@import '@{baseUrl}icons.less';
+@import '@{baseUrl}topbar.less';
+@import '@{baseUrl}pager.less';
+
+@import '../Shared/variable.less';
+
+.set-banner {
+    height: 180px;
+}
+.set-desc {
+    padding: 0.6rem 0.8rem;
+    
+    font-size: @font-size-large;
+    background-color: #fff;
+    p {
+        font-size: @font-size-large;
+        color: @title-color;
+    }
+}
+
+.item-vertical.video-item {
+    .item-logo {
+        height: 4rem;
+        background-size: cover;
+    }
+}

@@ -1,0 +1,28 @@
+@baseUrl: '../Common/';
+
+@import '@{baseUrl}variables.less';
+@import '@{baseUrl}variables-custom.less';
+@import '@{baseUrl}mixins.less';
+@import '@{baseUrl}normalize.less';
+@import '@{baseUrl}common.less';
+@import '@{baseUrl}button.less';
+@import '@{baseUrl}item.less';
+@import '@{baseUrl}icons.less';
+@import '@{baseUrl}topbar.less';
+@import '@{baseUrl}pager.less';
+
+@import '../Shared/variable.less';
+@import '../Shared/musicListen.less';
+
+.no-data {
+    font-size: @baseFontSize;
+    padding: 10px;
+
+    text-align: center;
+    text-shadow: 1px 1px 1px white;
+}
+
+// app/game icon height
+.item-horizontal-compact .item-logo {
+    height: 3.4rem;
+}

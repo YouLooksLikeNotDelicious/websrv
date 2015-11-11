@@ -1,0 +1,173 @@
+struct LoginRequestData
+{
+    std::string userId;
+    std::string userName;
+    std::string afCoin;
+    std::string localPwd;
+};
+
+struct LoginRequest
+{
+    LoginRequestData data;
+    std::string      errMsg;
+    int              status;
+};
+
+struct CheckAnswerRequest
+{
+    std::string errMsg;
+    int         status;
+};
+
+struct CheckUserNameRequestQuestion
+{
+    std::string id;
+    std::string name;
+};
+
+struct CheckUserNameRequest
+{
+    CheckUserNameRequestQuestion question;
+    std::string                  errMsg;
+    int                          status;
+};
+
+struct QuestionRequest
+{
+    std::vector<CheckUserNameRequestQuestion> data;
+    std::string msg;
+    int status;
+};
+
+struct RechargeRequestData
+{
+    std::string afCoin;
+};
+
+struct RechargeRequest
+{
+    RechargeRequestData data;
+    std::string         errMsg;
+    int                 status;
+};
+
+struct BuyedListItem 
+{
+    std::string contentUuid;
+    std::string createTime;
+};
+
+struct GetBuyedListRequestData
+{
+    std::map<std::string, std::string> contentUuidMap;
+};
+
+struct BuyCountItem
+{
+    std::string name;
+    int count;
+};
+
+struct BuyCountData
+{
+    std::map<std::string, std::string> buyCountMap;
+};
+
+struct BuyedListRequestData
+{
+    std::string total;
+    std::map<std::string, std::string> contentUuid;
+    std::map<std::string, int> buyCount;
+};
+
+struct BuyedListRequest
+{
+    int status;
+    BuyedListRequestData data;
+};
+
+
+struct GetBuyedListRequest
+{
+    GetBuyedListRequestData data;
+    int status;
+    int total;
+    std::string errMsg;
+};
+
+struct BuyRequestData
+{
+    std::map<std::string, std::string> contentUuid;
+    std::string afCoin;
+    std::string countAdd;
+};
+
+struct BuyRequest
+{
+    BuyRequestData data;
+    int status;
+    std::string errMsg;
+};
+
+struct DownContentCheckRequestData
+{
+    std::string filePath;
+    std::string type;
+    std::string uuid;
+    std::string name;
+};
+
+struct DownContentCheckRequest
+{
+    DownContentCheckRequestData data;
+    int status;
+    std::string errMsg;
+};
+
+
+struct ResetPwdRequest
+{
+    int status;
+    std::string errMsg;
+};
+
+struct AccountPageRequest
+{
+    std::string userName;
+    std::string balance;
+    int buyedGameCount;
+    int buyedSoftCount;
+    int buyedPictureCount;
+    int buyedMusicCount;
+    int buyedVideoCount;
+};
+
+struct GetUserInfoRequest
+{
+    AccountPageRequest data;
+    int status;
+};
+
+struct RegisterAccountRequest
+{
+    int status;
+    std::string msg;
+};
+
+struct ChangePwdRequest
+{
+    int status;
+    std::string msg;
+};
+
+struct LogoutRequest
+{
+    int status;
+    std::string errMsg;
+};
+
+struct BaseResponseRequest
+{
+    int status;
+};
+

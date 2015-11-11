@@ -1,0 +1,70 @@
+﻿<extend name="Shared:layout" />
+<block name="title">Index</block>
+<block name="head">
+  <link rel="stylesheet" href="__CSS__/Main/index.css">
+</block>
+
+<block name="body">
+  <include file="Shared:toolbar" />
+  <php>
+    std::map<std::string, std::string> _active;
+    _active["main"] = "active";
+  </php>
+  <include file="Shared:categoryMenu" />
+  <include file="Main:index:slider" />
+  <if condition="_isIos eq 0">
+    <include file="Main:index:banner"
+    href="__APP__/Content/detailPage?uuid={_recommendGame->uuid}"
+    bkimg="{_recommendGame->banner}"
+    name='{:L("Game")}' />
+    <ul class="content-list clearfix">
+      <foreach name="games" item="content" listtype="vector&lt;game_info*&gt;">
+        <li>
+          <include file="Main:index:game" />
+        </li>
+      </foreach>
+    </ul>
+  </if>
+  <include file="Main:index:banner"
+    href="javascript:locate('__APP__/Content/detailPage?uuid={_recommendVideo->uuid}')"
+    bkimg="{_recommendVideo->banner}"
+    name='{:L("Video")}' />
+  <ul class="content-list clearfix">
+    <foreach name="videos" item="content" listtype="vector&lt;video_info*&gt;">
+      <li>
+        <include file="Main:index:video" />
+      </li>
+    </foreach>
+  </ul>
+  <include file="Main:index:banner"
+    href="javascript:locate('__APP__/Content/detailPage?uuid={_recommendMusic->uuid}')"
+    bkimg="{_recommendMusic->banner}"
+    name='{:L("Music")}' />
+  <ul class="content-list clearfix music-list">
+    <foreach name="musics" item="content">
+      <li>
+        <include file="Main:index:music" />
+      </li>
+    </foreach>
+  </ul>
+  <if condition="_isIos eq 0">
+  <include file="Main:index:banner"
+    href="javascript:locate('__APP__/Content/detailPage?uuid={_recommendSoft->uuid}')"
+    bkimg="{_recommendSoft->banner}"
+    name='{:L("App")}' />
+  <ul class="soft-list clearfix">
+    <foreach name="softs" item="content">
+      <li>
+        <include file="Main:index:soft" />
+      </li>
+    </foreach>
+  </ul>
+  </if>
+  <include file="Shared:musicListen" />
+  <include file="Shared:videoPreview" />
+</block>
+
+<block name="script">
+  <script src="__SCRIPT__/common/common.js"></script>
+  <script src="__SCRIPT__/common/sliders.js"></script>
+</block>

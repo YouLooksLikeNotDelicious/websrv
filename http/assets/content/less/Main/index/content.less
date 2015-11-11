@@ -1,0 +1,51 @@
+.content {
+    display: block;
+    background-color: white;
+}
+.content-bk {
+    height: 112px;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    .play {
+        position: absolute;
+        right: 5px;
+        bottom: 5px;
+        margin: auto;
+        border: none;
+        background-color: rgba(255,255,255,.05);
+    }
+}
+.content-other {
+    padding: 10px 5px;
+    position: relative;
+    .btn {
+        float: right;
+        position: relative;
+        .is-ios &{
+            visibility: hidden;
+        }
+    }
+}
+.content-price {
+    display: inline-block;
+    margin-left: 2px;
+}
+.content-name {
+    position: absolute;
+    font-size: 14px;
+    left: 5px;
+    right: 78px;
+    .oneline();
+    .is-ios &{
+        right: 5px;
+    }
+}
+.actors, .singer {
+    display: block;
+    line-height: 1.3em;
+    clear: both;
+    color: @commentColor;
+    .oneline();
+}

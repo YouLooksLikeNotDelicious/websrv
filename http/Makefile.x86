@@ -1,0 +1,39 @@
+CC=gcc -g -Wno-unused-but-set-variable -Wno-unused-variable -Wno-unused-function -Wall -c
+CXX=g++ -Wno-unused-but-set-variable -Wno-unused-variable -Wno-unused-function -Wall -g -std=c++11
+LD = $(CXX)
+LDFLAGS = -L. -lconfuse -ljsoncpp -lsqlite3 -levent -levhtp -pthread #-levent_openssl
+
+controllers = controller/base.o  controller/account.o  controller/SiteLanguage.o 
+libs = libs/web.o libs/session.o libs/mimetype.o libs/daemon.o libs/unix_socket.o libs/unix_socket_buffer.o libs/arp.o libs/data_collect.o libs/cmdopt.o libs/log.o libs/logger.o libs/json_result.o
+
+business_dir = controller/Business
+business =  $(business_dir)/Request.o $(business_dir)/AccountBusiness.o $(business_dir)/SessionBusiness.o $(business_dir)/SessionInfo.o
+
+objects = server.o $(controllers) $(libs) $(business)
+
+debug: 
+	make -C tpl
+	make -C controller/Business
+	make -f Makefile.x86 server_debug
+
+server_debug: $(objects)
+	-@rm -rf core.*
+	$(LD) $^ $(LDFLAGS) -o $@
+
+server: $(objects)
+	$(LD) $^ $(LDFLAGS) -o $@
+	
+server.o: server.cpp site.config libs/filter_login_auth.hpp
+libs/web.o: libs/web.cpp libs/web.partial*
+$(controllers) $(libs) server.o: libs/logger.hpp
+
+
+controller/SiteLanguage.o: controller/SiteLanguage.cpp
+
+clean:
+	-@rm -fr server_debug server *.o controller/*.o libs/*.o tpl/*/*.hpp 
+	make -C tpl clean
+	make -C controller/content clean
+	make -C controller/Business clean
+
+

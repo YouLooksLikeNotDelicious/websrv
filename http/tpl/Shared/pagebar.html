@@ -1,0 +1,21 @@
+<div class="block-flat-simple cy-pager">
+    <if condition="_start elt 0">
+        <a class="prev disabled">
+            <span class='icon icon-previous-double-disable'></span>
+        </a>
+    <else />
+        <a href='javascript:locate("__APP__/Content/listPage?type={_type|htmlentities=###,ENT_COMPAT,"UTF-8"}&start={:std::to_string(_start - _count > 0 ? _start - _count : 0)}&count={_count|std::to_string}", false)' class="prev">
+            <span class='icon icon-previous-double'></span>
+        </a>
+    </if>
+    <span class='page-num'>{:L("the")}{:std::to_string(_start / _count + 1)}{:L("page")}</span>
+    <if condition="(_start + _count) egt _total">
+        <a class="next disabled">
+            <span class='icon icon-next-double-disable'></span>
+        </a>
+    <else />
+        <a href='javascript:locate("__APP__/Content/listPage?type={_type|htmlentities=###,ENT_COMPAT,"UTF-8"}&start={:std::to_string(_start + _count)}&count={_count|std::to_string}", false)' class="next">
+            <span class='icon icon-next-double'></span>
+        </a>
+    </if>
+</div>

@@ -1,0 +1,165 @@
+@baseUrl: '../Common/';
+
+@import '@{baseUrl}variables.less';
+@import '@{baseUrl}variables-custom.less';
+@import '@{baseUrl}mixins.less';
+@import '@{baseUrl}normalize.less';
+@import '@{baseUrl}common.less';
+@import '@{baseUrl}button.less';
+@import '@{baseUrl}item.less';
+@import '@{baseUrl}list.less';
+@import '@{baseUrl}image-wall.less';
+@import '@{baseUrl}icons.less';
+@import '@{baseUrl}topbar.less';
+
+@import '../Shared/variable.less';
+@import "../Shared/musicListen.less";
+
+.detail-poster {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 180px;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    .detail-poster-player {
+        width: 75px;
+        height: 75px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-top: -37.5px;
+        margin-left: -37.5px;
+    }
+}
+.detail-title {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    height: 3.5rem;
+    border-bottom: 1px solid @border-color;
+
+    .item-info {
+        left: 0.5rem;
+        right: 0.5rem;
+        .item-info-title {
+            font-size: 0.8rem;
+            padding-right: 0;
+        }
+    }
+    .item-action {
+        top: 50%;
+        right: 0.6rem;
+        margin-top: -0.5rem;
+    }
+}
+
+.detail-meta {
+    .clearfix();
+    padding-top: 0.5rem;
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
+    li {
+        float: left;
+        width: 100%;
+        p {
+            line-height: 1.8;
+        }
+    }
+}
+
+#toggle-zone {
+    &.collapsed {
+        max-height: 1.95rem;
+        #content-desc {
+            .max-lines(2, 0.65rem, 1.8);
+        }
+        &~#toggle-button .icon-triangle-down {
+            transform: rotate(0);
+        }
+    }
+    transition: max-height 300ms ease;
+    max-height: 512px;
+    overflow: hidden;
+}
+#toggle-button {
+    text-align: center;
+    .icon-triangle-down {
+        transition: transform 300ms ease;
+        transform: rotate(180deg);
+    }
+    span {
+        padding: 0.1rem 0.2rem 0;
+    }
+}
+
+.z-image-wall {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: -0.15rem;
+    margin-right: -0.15rem;
+    overflow: hidden;
+
+    .z-image-item {
+        padding: 0.15rem;
+    }
+}
+
+.triangle {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border: 0.4rem solid transparent;
+    &.top {
+        border-bottom-color: @gray-light;
+        border-right-width: 0.25rem;
+        border-left-width: 0.25rem;
+        transform: translateY(-0.1rem);
+        &.active {
+            border-bottom-color: @brand-primary;
+        }
+    }
+    &.bottom {
+        border-top-color: @gray-light;
+        border-right-width: 0.25rem;
+        border-left-width: 0.25rem;
+        transform: translateY(0.3rem);
+        &.active {
+            border-top-color: @brand-primary;
+        }
+    }
+}
+
+.series-info {
+}
+.sery-list {
+    .clearfix();
+    .list-item {
+        width: 25%;
+        float: left;
+        &.active {
+            color: @brand-primary;
+        }
+    }
+    .sery-ranger {
+        padding: 0.1rem 0 0.3rem;
+        font-size: @font-size-large;
+    }
+}
+.sery-group {
+    .clearfix();
+    margin-left: -0.25rem;
+    margin-right: -0.25rem;
+    .list-item {
+        width: 20%;
+        float: left;
+        padding: 0.25rem;
+        text-align: center;
+    }
+    .video-item {
+        display: inline-block;
+        background-color: #ddd;
+        padding: 0.4rem 0;
+        width: 100%;
+    }
+}

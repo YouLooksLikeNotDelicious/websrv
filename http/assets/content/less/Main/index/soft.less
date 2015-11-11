@@ -1,0 +1,57 @@
+.soft-list {
+    margin: 0 8px;
+    li {
+        width: 100%;
+        padding: 0 2px;
+        margin-top: 4px;
+        float: left;
+
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+}
+.soft {
+    padding: 8px 4px;
+    display: block;
+    background-color: white;
+    position: relative;
+    .btn {
+        position: absolute;
+        bottom: 8px;
+        right: 5px;
+    }
+}
+.soft-icon {
+    float: left;
+    width: 48px;
+    height: 48px;
+    background-size: cover;
+    background-position: center center;
+}
+.soft-info {
+    height: 48px;
+    top: 8px;
+    left: 4px + 48px + 10px;
+    right: 80px;
+    position: absolute;
+    .buyed & {
+        right: 75px;
+    }
+}
+.soft-title {
+    .oneline();
+    font-size: 14px;
+    font-weight: bold;
+}
+.soft-desc {
+    position: absolute;
+    bottom: 0;
+    max-height: 30px;
+    width: 100%;
+    line-height: 15px;
+    font-size: @smallFontSize;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: @commentColor;
+}

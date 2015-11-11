@@ -1,0 +1,149 @@
+<extend name="Shared:layout" />
+<block name="title">Sign up</block>
+
+<block name="head">
+  <link rel="stylesheet" href="__CSS__/Account/form.css" />
+</block>
+
+<block name="body">
+  <include file="Shared:navigation" title="Sign up" />
+
+  <div class="main">
+    <form action="__APP__/Account/registerAccount?from=b" method="GET" autocomplete="off">
+      <fieldset>
+        <div class="control input-control clearfix">
+          <i class="icon icon-B1PhoneNumber"></i>
+          <div class="input-wrapper">
+            <input type="text" name="userName" id="PhoneNum"
+              placeholder="Phone number" autocomplete="off">
+          </div>
+        </div>
+        <div class="control input-control clearfix">
+          <i class="icon icon-B1-Jpassword"></i>
+          <div class="input-wrapper">
+            <input type="password" name="pwd" id="Password"
+              placeholder="Password, at least 6 letters." autocomplete="off">
+          </div>
+        </div>
+        <div class="control input-control clearfix">
+          <i class="icon icon-B1-Jpassword"></i>
+          <div class="input-wrapper">
+            <input type="password" name="confirmpwd" id="confirmpwd"
+              placeholder="Confirm password" autocomplete="off">
+          </div>
+        </div>
+      </fieldset>
+      <h2 class="fieldset-title">For retrive password only</h2>
+      <fieldset>
+        <div class="control input-control clearfix">
+          <i class="icon icon-B2-2qusetion"></i>
+          <label class="select-wrapper">
+            <select type="text" name="questionId" id="question">
+              <foreach name="questions" item="question" listtype="vector&lt;CheckUserNameRequestQuestion&gt;">
+                <option value="{_question.id}">{_question.name}</option>
+              </foreach>
+            </select>
+          </label>
+        </div>
+        <div class="control input-control clearfix">
+          <i class="icon icon-B2-2answer"></i>
+          <div class="input-wrapper">
+            <input type="text" name="answer" id="answer"
+              placeholder="Answer the secret question" />
+          </div>
+        </div>
+      </fieldset>
+      <div class="control mt-40">
+        <div class="button-wrapper">
+          <button type="button" onclick="submitForm(arguments[0], this);"
+            class="btn btn-success form-btn" data-submit-text="Sign up...">
+            Confirm
+          </button>
+        </div>
+      </div>
+    </form>
+
+  </div>
+</block>
+
+<block name="script">
+  <script>
+    var submitForm = function (e, btn) {
+      var formInfo = getForm(),
+        values = getFields(),
+        validateMsg = validateForm(values),
+        $btn = $(btn);
+      if (!validateMsg) {
+        $btn.button('submit');
+        $.ajax({
+          url: formInfo.url,
+          method: formInfo.method,
+          data: serializeKeyVals(values),
+          success: function (data) {
+            if (data.status == 1000) {
+              alert('Sign up success! ');
+              signUp(values.userName, values.pwd);
+            } else {
+              alert(data.msg || data.errMsg || 'Sign up failed, please retry');
+              $btn.button('reset');
+            }
+          },
+          error: function (txtStatus, msg, xhr) {
+            alert('Failed: ' + txtStatus + ', please retry');
+            $btn.button('reset');
+          }
+        });
+      } else {
+        alert(validateMsg);
+      }
+    };
+    var signUp = function (username, pwd) {
+      $.ajax({
+        url: '__APP__/Account/login?from=b',
+        method: 'GET',
+        data: serializeKeyVals({
+          userName: username,
+          pwd: pwd
+        }),
+        success: function (data) {
+          if (data.status == 1000) {
+            locate(ROOT + '/Main/index', false);
+          } else {
+            alert(data.msg || data.errMsg  || 'Sign in failed, please retry');
+            historyBack();
+          }
+        },
+        error: function (txtStatus, msg, xhr) {
+            alert('Failed: ' + txtStatus + ', please retry');
+            historyBack();
+        }
+      });
+    };
+
+    var validateForm = function (vals) {
+      var result = [];
+      if (!$.trim(vals['userName'])) {
+        result.push('Phone number can not be empty');
+      }
+      var pwd = $.trim(vals['pwd']),
+        confirmpwd = $.trim(vals['confirmpwd']);
+      if (!pwd) {
+        result.push('Password can not be empty');
+      } else if (pwd.length < 6) {
+        result.push('Password length must be greater than 6.');
+      } else if (!confirmpwd) {
+        result.push('Please input the confirm password.');
+      } else if (pwd != confirmpwd) {
+        msg.push('Confirm password must be equal to the password');
+      }
+      if (!$.trim(vals['questionId'])) {
+        result.push('You must choose a question.');
+      }
+      if (!$.trim(vals['answer'])) {
+        result.push('Answer can not be empty');
+      }
+      return result.join(String.fromCharCode(92)+'n');
+    };
+  </script>
+</block>
+

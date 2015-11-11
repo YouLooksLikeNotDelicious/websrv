@@ -1,0 +1,25 @@
+@import 'variables.less';
+@import 'variables-custom.less';
+@import 'mixins.less';
+
+.btn {
+    .btn(ghost; 3.4rem; 1.25rem; 0.15rem; 0.6rem; #fff; @gray-black);
+}
+.btn.btn-primary {
+    border-color: @brand-primary;
+    color: @brand-primary;
+    &:active {
+        background-color: @brand-primary;
+        color: #fff;
+    }
+}
+.btn-reverse {
+    .btn(3.75rem; 1.25rem; 0.15rem; 0.6rem; @gray-black; #fff);
+}
+.btn.btn-block, .btn-reverse.btn-block {
+    height: 2rem;
+    width: 100%;
+
+    line-height: 2rem;
+    font-size: @font-size-large;
+}
