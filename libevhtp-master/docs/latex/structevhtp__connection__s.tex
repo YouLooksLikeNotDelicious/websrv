@@ -1,0 +1,247 @@
+\hypertarget{structevhtp__connection__s}{\section{evhtp\-\_\-connection\-\_\-s \-Struct \-Reference}
+\label{structevhtp__connection__s}\index{evhtp\-\_\-connection\-\_\-s@{evhtp\-\_\-connection\-\_\-s}}
+}
+
+
+{\ttfamily \#include $<$evhtp.\-h$>$}
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structevhtp__connection__s_a52ddde4d8c2748fe93aa08c00d604290}{\-T\-A\-I\-L\-Q\-\_\-\-H\-E\-A\-D} (, \hyperlink{structevhtp__request__s}{evhtp\-\_\-request\-\_\-s}) pending
+\end{DoxyCompactItemize}
+\subsection*{\-Data \-Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{evhtp_8h_aa670c92d77f9a732e03a7d48ada2b31b}{evhtp\-\_\-t} $\ast$ \hyperlink{structevhtp__connection__s_ad2f5cc5c9e97f75f1fe923c57af9e875}{htp}
+\item 
+evbase\-\_\-t $\ast$ \hyperlink{structevhtp__connection__s_abc4ce26b166a97e5766105f253a4fe21}{evbase}
+\item 
+\hyperlink{evhtp_8h_af92ce7197ff545dc83b76f1650bc57e1}{evbev\-\_\-t} $\ast$ \hyperlink{structevhtp__connection__s_a56cc56e5934366a7ca14026f5be0b3dd}{bev}
+\item 
+evthr\-\_\-t $\ast$ \hyperlink{structevhtp__connection__s_aaf924ac18ad3dd26c8676d835116579e}{thread}
+\item 
+\hyperlink{evhtp_8h_a85b31561e6827b118669d514fe00aa3d}{evhtp\-\_\-ssl\-\_\-t} $\ast$ \hyperlink{structevhtp__connection__s_a9d5e6d2a2098e174347708a6d561b2ec}{ssl}
+\item 
+\hyperlink{evhtp_8h_ac77d779459ec62f309d1fb09c5540786}{evhtp\-\_\-hooks\-\_\-t} $\ast$ \hyperlink{structevhtp__connection__s_ac97663394f74c9030e57c771cfb7981e}{hooks}
+\item 
+htparser $\ast$ \hyperlink{structevhtp__connection__s_accaeb42c4c926437fc7921fa7910911b}{parser}
+\item 
+\hyperlink{evhtp_8h_ad0c066ffb009d3286186a124d37a0c2d}{event\-\_\-t} $\ast$ \hyperlink{structevhtp__connection__s_a7a583b9c2322f322b8785b9cff0e9585}{resume\-\_\-ev}
+\item 
+struct sockaddr $\ast$ \hyperlink{structevhtp__connection__s_a95957a2d67e88843dae4b71c658b6ecb}{saddr}
+\item 
+struct timeval \hyperlink{structevhtp__connection__s_a485801666b7fb0cccc50d9fa42e5cbb9}{recv\-\_\-timeo}
+\item 
+struct timeval \hyperlink{structevhtp__connection__s_a7ffa291d73974047489f8880e5363603}{send\-\_\-timeo}
+\item 
+evutil\-\_\-socket\-\_\-t \hyperlink{structevhtp__connection__s_a7544570bf388a535223a1e8e1b2301ac}{sock}
+\item 
+uint8\-\_\-t \hyperlink{structevhtp__connection__s_adc64ccb7538429fe78e3fe0139267370}{error}
+\item 
+uint8\-\_\-t \hyperlink{structevhtp__connection__s_a1c3b8d8797515eea0e86cbdb2d85aed6}{owner}
+\item 
+uint8\-\_\-t \hyperlink{structevhtp__connection__s_a7f7e7921437e13781ac277814b976590}{vhost\-\_\-via\-\_\-sni}
+\item 
+\hyperlink{evhtp_8h_a7adab4c0e9bd15e2b846c3adca6c37f7}{evhtp\-\_\-request\-\_\-t} $\ast$ \hyperlink{structevhtp__connection__s_a55db4995ccc7d4d06340bd057ff9f291}{request}
+\item 
+uint64\-\_\-t \hyperlink{structevhtp__connection__s_ac0c51866465cd3ccc68751b0ce806cbc}{max\-\_\-body\-\_\-size}
+\item 
+uint64\-\_\-t \hyperlink{structevhtp__connection__s_a1e939d2a1fb4d2559e1447b038b28a03}{body\-\_\-bytes\-\_\-read}
+\item 
+uint64\-\_\-t \hyperlink{structevhtp__connection__s_a56f90fa0eaddefea2d0b62057dd9276c}{num\-\_\-requests}
+\item 
+\hyperlink{evhtp_8h_aefdccd304fcda382d951a95b8eaa9bf2}{evhtp\-\_\-type} \hyperlink{structevhtp__connection__s_a6188c3148fbaafe2848b330c9f8f4732}{type}
+\item 
+char \hyperlink{structevhtp__connection__s_ac2ef7c4493180f5ffc32c19778bdbfbd}{paused}
+\item 
+char \hyperlink{structevhtp__connection__s_a1feee40d1f2ed522657762d1f17c6fb1}{free\-\_\-connection}
+\item 
+struct ev\-\_\-token\-\_\-bucket\-\_\-cfg $\ast$ \hyperlink{structevhtp__connection__s_a8b99b0e4db2727c4c0880feb16e7a7be}{ratelimit\-\_\-cfg}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+
+
+\-Definition at line 420 of file evhtp.\-h.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{structevhtp__connection__s_a52ddde4d8c2748fe93aa08c00d604290}{\index{evhtp\-\_\-connection\-\_\-s@{evhtp\-\_\-connection\-\_\-s}!\-T\-A\-I\-L\-Q\-\_\-\-H\-E\-A\-D@{\-T\-A\-I\-L\-Q\-\_\-\-H\-E\-A\-D}}
+\index{\-T\-A\-I\-L\-Q\-\_\-\-H\-E\-A\-D@{\-T\-A\-I\-L\-Q\-\_\-\-H\-E\-A\-D}!evhtp_connection_s@{evhtp\-\_\-connection\-\_\-s}}
+\subsubsection[{\-T\-A\-I\-L\-Q\-\_\-\-H\-E\-A\-D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-T\-A\-I\-L\-Q\-\_\-\-H\-E\-A\-D} (
+\begin{DoxyParamCaption}
+\item[{{\bf evhtp\-\_\-request\-\_\-s}}]{}
+\end{DoxyParamCaption}
+)}}\label{structevhtp__connection__s_a52ddde4d8c2748fe93aa08c00d604290}
+client pending data 
+
+\subsection{\-Field \-Documentation}
+\hypertarget{structevhtp__connection__s_a56cc56e5934366a7ca14026f5be0b3dd}{\index{evhtp\-\_\-connection\-\_\-s@{evhtp\-\_\-connection\-\_\-s}!bev@{bev}}
+\index{bev@{bev}!evhtp_connection_s@{evhtp\-\_\-connection\-\_\-s}}
+\subsubsection[{bev}]{\setlength{\rightskip}{0pt plus 5cm}{\bf evbev\-\_\-t}$\ast$ {\bf bev}}}\label{structevhtp__connection__s_a56cc56e5934366a7ca14026f5be0b3dd}
+
+
+\-Definition at line 423 of file evhtp.\-h.
+
+\hypertarget{structevhtp__connection__s_a1e939d2a1fb4d2559e1447b038b28a03}{\index{evhtp\-\_\-connection\-\_\-s@{evhtp\-\_\-connection\-\_\-s}!body\-\_\-bytes\-\_\-read@{body\-\_\-bytes\-\_\-read}}
+\index{body\-\_\-bytes\-\_\-read@{body\-\_\-bytes\-\_\-read}!evhtp_connection_s@{evhtp\-\_\-connection\-\_\-s}}
+\subsubsection[{body\-\_\-bytes\-\_\-read}]{\setlength{\rightskip}{0pt plus 5cm}uint64\-\_\-t {\bf body\-\_\-bytes\-\_\-read}}}\label{structevhtp__connection__s_a1e939d2a1fb4d2559e1447b038b28a03}
+
+
+\-Definition at line 438 of file evhtp.\-h.
+
+\hypertarget{structevhtp__connection__s_adc64ccb7538429fe78e3fe0139267370}{\index{evhtp\-\_\-connection\-\_\-s@{evhtp\-\_\-connection\-\_\-s}!error@{error}}
+\index{error@{error}!evhtp_connection_s@{evhtp\-\_\-connection\-\_\-s}}
+\subsubsection[{error}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t {\bf error}}}\label{structevhtp__connection__s_adc64ccb7538429fe78e3fe0139267370}
+
+
+\-Definition at line 433 of file evhtp.\-h.
+
+\hypertarget{structevhtp__connection__s_abc4ce26b166a97e5766105f253a4fe21}{\index{evhtp\-\_\-connection\-\_\-s@{evhtp\-\_\-connection\-\_\-s}!evbase@{evbase}}
+\index{evbase@{evbase}!evhtp_connection_s@{evhtp\-\_\-connection\-\_\-s}}
+\subsubsection[{evbase}]{\setlength{\rightskip}{0pt plus 5cm}evbase\-\_\-t$\ast$ {\bf evbase}}}\label{structevhtp__connection__s_abc4ce26b166a97e5766105f253a4fe21}
+
+
+\-Definition at line 422 of file evhtp.\-h.
+
+\hypertarget{structevhtp__connection__s_a1feee40d1f2ed522657762d1f17c6fb1}{\index{evhtp\-\_\-connection\-\_\-s@{evhtp\-\_\-connection\-\_\-s}!free\-\_\-connection@{free\-\_\-connection}}
+\index{free\-\_\-connection@{free\-\_\-connection}!evhtp_connection_s@{evhtp\-\_\-connection\-\_\-s}}
+\subsubsection[{free\-\_\-connection}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf free\-\_\-connection}}}\label{structevhtp__connection__s_a1feee40d1f2ed522657762d1f17c6fb1}
+
+
+\-Definition at line 442 of file evhtp.\-h.
+
+\hypertarget{structevhtp__connection__s_ac97663394f74c9030e57c771cfb7981e}{\index{evhtp\-\_\-connection\-\_\-s@{evhtp\-\_\-connection\-\_\-s}!hooks@{hooks}}
+\index{hooks@{hooks}!evhtp_connection_s@{evhtp\-\_\-connection\-\_\-s}}
+\subsubsection[{hooks}]{\setlength{\rightskip}{0pt plus 5cm}{\bf evhtp\-\_\-hooks\-\_\-t}$\ast$ {\bf hooks}}}\label{structevhtp__connection__s_ac97663394f74c9030e57c771cfb7981e}
+
+
+\-Definition at line 426 of file evhtp.\-h.
+
+\hypertarget{structevhtp__connection__s_ad2f5cc5c9e97f75f1fe923c57af9e875}{\index{evhtp\-\_\-connection\-\_\-s@{evhtp\-\_\-connection\-\_\-s}!htp@{htp}}
+\index{htp@{htp}!evhtp_connection_s@{evhtp\-\_\-connection\-\_\-s}}
+\subsubsection[{htp}]{\setlength{\rightskip}{0pt plus 5cm}{\bf evhtp\-\_\-t}$\ast$ {\bf htp}}}\label{structevhtp__connection__s_ad2f5cc5c9e97f75f1fe923c57af9e875}
+
+
+\-Definition at line 421 of file evhtp.\-h.
+
+\hypertarget{structevhtp__connection__s_ac0c51866465cd3ccc68751b0ce806cbc}{\index{evhtp\-\_\-connection\-\_\-s@{evhtp\-\_\-connection\-\_\-s}!max\-\_\-body\-\_\-size@{max\-\_\-body\-\_\-size}}
+\index{max\-\_\-body\-\_\-size@{max\-\_\-body\-\_\-size}!evhtp_connection_s@{evhtp\-\_\-connection\-\_\-s}}
+\subsubsection[{max\-\_\-body\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}uint64\-\_\-t {\bf max\-\_\-body\-\_\-size}}}\label{structevhtp__connection__s_ac0c51866465cd3ccc68751b0ce806cbc}
+
+
+\-Definition at line 437 of file evhtp.\-h.
+
+\hypertarget{structevhtp__connection__s_a56f90fa0eaddefea2d0b62057dd9276c}{\index{evhtp\-\_\-connection\-\_\-s@{evhtp\-\_\-connection\-\_\-s}!num\-\_\-requests@{num\-\_\-requests}}
+\index{num\-\_\-requests@{num\-\_\-requests}!evhtp_connection_s@{evhtp\-\_\-connection\-\_\-s}}
+\subsubsection[{num\-\_\-requests}]{\setlength{\rightskip}{0pt plus 5cm}uint64\-\_\-t {\bf num\-\_\-requests}}}\label{structevhtp__connection__s_a56f90fa0eaddefea2d0b62057dd9276c}
+
+
+\-Definition at line 439 of file evhtp.\-h.
+
+\hypertarget{structevhtp__connection__s_a1c3b8d8797515eea0e86cbdb2d85aed6}{\index{evhtp\-\_\-connection\-\_\-s@{evhtp\-\_\-connection\-\_\-s}!owner@{owner}}
+\index{owner@{owner}!evhtp_connection_s@{evhtp\-\_\-connection\-\_\-s}}
+\subsubsection[{owner}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t {\bf owner}}}\label{structevhtp__connection__s_a1c3b8d8797515eea0e86cbdb2d85aed6}
+set to 1 if this structure owns the bufferevent 
+
+\-Definition at line 434 of file evhtp.\-h.
+
+\hypertarget{structevhtp__connection__s_accaeb42c4c926437fc7921fa7910911b}{\index{evhtp\-\_\-connection\-\_\-s@{evhtp\-\_\-connection\-\_\-s}!parser@{parser}}
+\index{parser@{parser}!evhtp_connection_s@{evhtp\-\_\-connection\-\_\-s}}
+\subsubsection[{parser}]{\setlength{\rightskip}{0pt plus 5cm}htparser$\ast$ {\bf parser}}}\label{structevhtp__connection__s_accaeb42c4c926437fc7921fa7910911b}
+
+
+\-Definition at line 427 of file evhtp.\-h.
+
+\hypertarget{structevhtp__connection__s_ac2ef7c4493180f5ffc32c19778bdbfbd}{\index{evhtp\-\_\-connection\-\_\-s@{evhtp\-\_\-connection\-\_\-s}!paused@{paused}}
+\index{paused@{paused}!evhtp_connection_s@{evhtp\-\_\-connection\-\_\-s}}
+\subsubsection[{paused}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf paused}}}\label{structevhtp__connection__s_ac2ef7c4493180f5ffc32c19778bdbfbd}
+
+
+\-Definition at line 441 of file evhtp.\-h.
+
+\hypertarget{structevhtp__connection__s_a8b99b0e4db2727c4c0880feb16e7a7be}{\index{evhtp\-\_\-connection\-\_\-s@{evhtp\-\_\-connection\-\_\-s}!ratelimit\-\_\-cfg@{ratelimit\-\_\-cfg}}
+\index{ratelimit\-\_\-cfg@{ratelimit\-\_\-cfg}!evhtp_connection_s@{evhtp\-\_\-connection\-\_\-s}}
+\subsubsection[{ratelimit\-\_\-cfg}]{\setlength{\rightskip}{0pt plus 5cm}struct ev\-\_\-token\-\_\-bucket\-\_\-cfg$\ast$ {\bf ratelimit\-\_\-cfg}}}\label{structevhtp__connection__s_a8b99b0e4db2727c4c0880feb16e7a7be}
+connection-\/specific ratelimiting configuration. 
+
+\-Definition at line 443 of file evhtp.\-h.
+
+\hypertarget{structevhtp__connection__s_a485801666b7fb0cccc50d9fa42e5cbb9}{\index{evhtp\-\_\-connection\-\_\-s@{evhtp\-\_\-connection\-\_\-s}!recv\-\_\-timeo@{recv\-\_\-timeo}}
+\index{recv\-\_\-timeo@{recv\-\_\-timeo}!evhtp_connection_s@{evhtp\-\_\-connection\-\_\-s}}
+\subsubsection[{recv\-\_\-timeo}]{\setlength{\rightskip}{0pt plus 5cm}struct timeval {\bf recv\-\_\-timeo}}}\label{structevhtp__connection__s_a485801666b7fb0cccc50d9fa42e5cbb9}
+conn read timeouts (overrides global) 
+
+\-Definition at line 430 of file evhtp.\-h.
+
+\hypertarget{structevhtp__connection__s_a55db4995ccc7d4d06340bd057ff9f291}{\index{evhtp\-\_\-connection\-\_\-s@{evhtp\-\_\-connection\-\_\-s}!request@{request}}
+\index{request@{request}!evhtp_connection_s@{evhtp\-\_\-connection\-\_\-s}}
+\subsubsection[{request}]{\setlength{\rightskip}{0pt plus 5cm}{\bf evhtp\-\_\-request\-\_\-t}$\ast$ {\bf request}}}\label{structevhtp__connection__s_a55db4995ccc7d4d06340bd057ff9f291}
+the request currently being processed 
+
+\-Definition at line 436 of file evhtp.\-h.
+
+\hypertarget{structevhtp__connection__s_a7a583b9c2322f322b8785b9cff0e9585}{\index{evhtp\-\_\-connection\-\_\-s@{evhtp\-\_\-connection\-\_\-s}!resume\-\_\-ev@{resume\-\_\-ev}}
+\index{resume\-\_\-ev@{resume\-\_\-ev}!evhtp_connection_s@{evhtp\-\_\-connection\-\_\-s}}
+\subsubsection[{resume\-\_\-ev}]{\setlength{\rightskip}{0pt plus 5cm}{\bf event\-\_\-t}$\ast$ {\bf resume\-\_\-ev}}}\label{structevhtp__connection__s_a7a583b9c2322f322b8785b9cff0e9585}
+
+
+\-Definition at line 428 of file evhtp.\-h.
+
+\hypertarget{structevhtp__connection__s_a95957a2d67e88843dae4b71c658b6ecb}{\index{evhtp\-\_\-connection\-\_\-s@{evhtp\-\_\-connection\-\_\-s}!saddr@{saddr}}
+\index{saddr@{saddr}!evhtp_connection_s@{evhtp\-\_\-connection\-\_\-s}}
+\subsubsection[{saddr}]{\setlength{\rightskip}{0pt plus 5cm}struct sockaddr$\ast$ {\bf saddr}}}\label{structevhtp__connection__s_a95957a2d67e88843dae4b71c658b6ecb}
+
+
+\-Definition at line 429 of file evhtp.\-h.
+
+\hypertarget{structevhtp__connection__s_a7ffa291d73974047489f8880e5363603}{\index{evhtp\-\_\-connection\-\_\-s@{evhtp\-\_\-connection\-\_\-s}!send\-\_\-timeo@{send\-\_\-timeo}}
+\index{send\-\_\-timeo@{send\-\_\-timeo}!evhtp_connection_s@{evhtp\-\_\-connection\-\_\-s}}
+\subsubsection[{send\-\_\-timeo}]{\setlength{\rightskip}{0pt plus 5cm}struct timeval {\bf send\-\_\-timeo}}}\label{structevhtp__connection__s_a7ffa291d73974047489f8880e5363603}
+conn write timeouts (overrides global) 
+
+\-Definition at line 431 of file evhtp.\-h.
+
+\hypertarget{structevhtp__connection__s_a7544570bf388a535223a1e8e1b2301ac}{\index{evhtp\-\_\-connection\-\_\-s@{evhtp\-\_\-connection\-\_\-s}!sock@{sock}}
+\index{sock@{sock}!evhtp_connection_s@{evhtp\-\_\-connection\-\_\-s}}
+\subsubsection[{sock}]{\setlength{\rightskip}{0pt plus 5cm}evutil\-\_\-socket\-\_\-t {\bf sock}}}\label{structevhtp__connection__s_a7544570bf388a535223a1e8e1b2301ac}
+
+
+\-Definition at line 432 of file evhtp.\-h.
+
+\hypertarget{structevhtp__connection__s_a9d5e6d2a2098e174347708a6d561b2ec}{\index{evhtp\-\_\-connection\-\_\-s@{evhtp\-\_\-connection\-\_\-s}!ssl@{ssl}}
+\index{ssl@{ssl}!evhtp_connection_s@{evhtp\-\_\-connection\-\_\-s}}
+\subsubsection[{ssl}]{\setlength{\rightskip}{0pt plus 5cm}{\bf evhtp\-\_\-ssl\-\_\-t}$\ast$ {\bf ssl}}}\label{structevhtp__connection__s_a9d5e6d2a2098e174347708a6d561b2ec}
+
+
+\-Definition at line 425 of file evhtp.\-h.
+
+\hypertarget{structevhtp__connection__s_aaf924ac18ad3dd26c8676d835116579e}{\index{evhtp\-\_\-connection\-\_\-s@{evhtp\-\_\-connection\-\_\-s}!thread@{thread}}
+\index{thread@{thread}!evhtp_connection_s@{evhtp\-\_\-connection\-\_\-s}}
+\subsubsection[{thread}]{\setlength{\rightskip}{0pt plus 5cm}evthr\-\_\-t$\ast$ {\bf thread}}}\label{structevhtp__connection__s_aaf924ac18ad3dd26c8676d835116579e}
+
+
+\-Definition at line 424 of file evhtp.\-h.
+
+\hypertarget{structevhtp__connection__s_a6188c3148fbaafe2848b330c9f8f4732}{\index{evhtp\-\_\-connection\-\_\-s@{evhtp\-\_\-connection\-\_\-s}!type@{type}}
+\index{type@{type}!evhtp_connection_s@{evhtp\-\_\-connection\-\_\-s}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf evhtp\-\_\-type} {\bf type}}}\label{structevhtp__connection__s_a6188c3148fbaafe2848b330c9f8f4732}
+server or client 
+
+\-Definition at line 440 of file evhtp.\-h.
+
+\hypertarget{structevhtp__connection__s_a7f7e7921437e13781ac277814b976590}{\index{evhtp\-\_\-connection\-\_\-s@{evhtp\-\_\-connection\-\_\-s}!vhost\-\_\-via\-\_\-sni@{vhost\-\_\-via\-\_\-sni}}
+\index{vhost\-\_\-via\-\_\-sni@{vhost\-\_\-via\-\_\-sni}!evhtp_connection_s@{evhtp\-\_\-connection\-\_\-s}}
+\subsubsection[{vhost\-\_\-via\-\_\-sni}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t {\bf vhost\-\_\-via\-\_\-sni}}}\label{structevhtp__connection__s_a7f7e7921437e13781ac277814b976590}
+set to 1 if the vhost was found via \-S\-S\-L \-S\-N\-I 
+
+\-Definition at line 435 of file evhtp.\-h.
+
+
+
+\-The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{evhtp_8h}{evhtp.\-h}\end{DoxyCompactItemize}
